@@ -1,0 +1,33 @@
+.wrapper {
+  height: 100vh;
+  background-color: #172637;
+  :global {
+    input:-internal-autofill-selected {
+      -webkit-text-fill-color: rgba(0, 0, 0, 0.65) !important;
+      background-color: #fff !important;
+      background-image: none !important;
+      transition: background-color 5000s ease-in-out 0s !important;
+      -webkit-appearance: menulist-button;
+    }
+    .ant-input,
+    .ant-input-affix-wrapper {
+      color: rgba(0, 0, 0, 0.65);
+      background-color: #fff !important;
+    }
+  }
+}
+.content {
+  float: left;
+  width: calc(100% - 380px);
+  height: 100vh;
+  background-image: url(@/assets/login/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.title {
+  margin-bottom: 0;
+  color: #333;
+  font-size: 32px;
+  line-height: 2;
+}

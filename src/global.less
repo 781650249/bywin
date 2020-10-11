@@ -1,0 +1,430 @@
+@import '~@/styles/theme.less';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  overflow-y: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: tint(@bg-normal, 24%);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background-color: tint(@bg-normal, 24%);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: tint(@bg-normal, 32%);
+}
+
+.shadow {
+  box-shadow: 0 2px 8px fade(@black, 20);
+}
+
+// 地图摄像头图标
+.leaflet-marker-pane .leaflet-div-icon {
+  background-color: transparent;
+  border-width: 0;
+}
+.map-camera {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: url(~@/assets/camera.svg) no-repeat;
+  background-size: contain;
+  .map-camera-marker {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    display: block;
+    padding: 4px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1;
+    white-space: nowrap;
+    background: #fff;
+    border: 2px solid #f00;
+    border-radius: 10px 10px 10px 0;
+    transform: scale(1);
+  }
+}
+
+// 巡逻点未选中图标
+.map-patrol-point {
+  position: relative;
+  width: 28px;
+  height: 32px;
+  background: url(~@/assets/patrol/patrol-point.png) no-repeat;
+  background-size: contain;
+}
+// 巡逻点选中图标
+.map-patrol-point-checked {
+  position: relative;
+  width: 28px;
+  height: 32px;
+  background: url(~@/assets/patrol/patrol-point-checked.png) no-repeat;
+  background-size: contain;
+}
+
+.f-title {
+  position: relative;
+  height: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  text-indent: 8px;
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 3px;
+    height: 14px;
+    margin: auto;
+    background-color: @primary-color;
+    border-radius: 1px;
+    content: '';
+  }
+}
+
+.f-btn-poweroff {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background: url(~@/assets/global/icon-btn-poweroff.png) no-repeat;
+  background-size: 100% 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-image .3s, box-shadow .3s;
+  &:hover {
+    box-shadow: 0 0 0 1px fade(@proces-color, 45);
+  }
+  &-active {
+    background-image: url(~@/assets/global/icon-btn-poweroff-active.png);
+    &:hover {
+      box-shadow: 0 0 0 1px fade(@primary-color, 45);
+    }
+  }
+}
+
+
+
+// tag 标签
+.f-tag {
+  display: inline-block;
+  height: 22px;
+  padding: 0 14px;
+  color: @white;
+  font-size: 12px;
+  line-height: 20px;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: 0 11px 11px 11px;
+  transition: background-color 300ms;
+  user-select: none;
+  &-default {
+    color: @tag-default-color;
+    background-color: @tag-default;
+    border-color: @tab-border-default-color;
+  }
+  &-primary {
+    background-color: @tag-primary;
+    border-color: @tag-primary;
+  }
+  &-error {
+    background-color: @tag-error;
+    border-color: @tag-error;
+  }
+  &-warning {
+    background-color: @tag-warning;
+    border-color: @tag-warning;
+  }
+  &-success {
+    background-color: @tag-success;
+    border-color: @tag-success;
+  }
+}
+
+// arrow 带箭头按钮
+.f-arrow {
+  &-expand,
+  &-collapse,
+  &-prev,
+  &-next {
+    position: relative;
+    display: inline-block;
+    font-size: 80px;
+    line-height: 0;
+    border-color: @default-color;
+    border-style: solid;
+    cursor: pointer;
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 0.15em;
+      height: 0.15em;
+      margin: auto;
+      border: 0 solid @white;
+      border-top-width: 0.0375em;
+      border-left-width: 0.0375em;
+      content: '';
+    }
+  }
+  &-primary {
+    border-color: @primary-color;
+  }
+  &-error {
+    border-color: @error-color;
+  }
+  &-warning {
+    border-color: @warning-color;
+  }
+  &-success {
+    border-color: @success-color;
+  }
+}
+.f-arrow-prev {
+  width: 0.3em;
+  height: 1em;
+  border-width: 0.1em 0.3em 0.1em 0;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  &::before {
+    right: auto;
+    left: 0.15em;
+    transform: translate(-25%, 0) rotate(-45deg);
+  }
+}
+.f-arrow-next {
+  width: 0.3em;
+  height: 1em;
+  border-width: 0.1em 0 0.1em 0.3em;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  &::before {
+    right: 0.15em;
+    left: auto;
+    transform: translate(25%, 0) rotate(135deg);
+  }
+}
+
+.f-arrow-collapse,
+.f-arrow-expand {
+  width: 1em;
+  height: 0.3em;
+  border-width: 0.3em 0.1em 0 0.1em;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  &::before {
+    top: auto;
+    bottom: 0.15em;
+  }
+}
+.f-arrow-collapse {
+  &::before {
+    transform: translate(0, 25%) rotate(-135deg);
+  }
+}
+.f-arrow-expand {
+  &::before {
+    transform: translate(0, 75%) rotate(45deg);
+  }
+}
+
+.f-circle-marker {
+  width: 4px;
+  height: 4px;
+  color: @white;
+  line-height: 0;
+  text-align: center;
+  background-color: @white;
+  // background-color: @primary-color;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px @primary-color, 0 0 0 8px @white, 0 0 4px 8px fade(@black, 12);
+}
+
+.f-shadow-marker {
+  width: 4px;
+  height: 1px;
+  line-height: 0;
+  text-align: center;
+  background-color: #1890ff;
+  border-radius: 50%;
+  box-shadow: 0 12px 5px 5px #1890ff;
+}
+
+// modal关闭状态
+.modal-enter {
+  opacity: 0;
+  & > div {
+    transform: scale(0.8);
+  }
+}
+.modal-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+  & > div {
+    transform: translateX(0);
+    transition: transform 300ms;
+  }
+}
+.modal-exit {
+  opacity: 1;
+}
+.modal-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+  & > div {
+    transform: scale(0.8);
+    transition: transform 300ms;
+  }
+}
+
+.ft {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.show {
+  display: block !important;
+}
+.hide {
+  display: none !important;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@sizeList: 4, 8, 16, 24, 32, 48;
+.loop(@value) {
+  @number: extract(@sizeList, @value);
+  @fs: 12 + @value * 2;
+  .fs-@{fs} {
+    font-size: unit(@fs, px);
+  }
+  .m-@{number} {
+    margin: unit(@number, px);
+  }
+  .mt-@{number} {
+    margin-top: unit(@number, px);
+  }
+  .mr-@{number} {
+    margin-right: unit(@number, px);
+  }
+  .mb-@{number} {
+    margin-bottom: unit(@number, px);
+  }
+  .ml-@{number} {
+    margin-left: unit(@number, px);
+  }
+  .mlr-@{number} {
+    margin-right: unit(@number, px);
+    margin-left: unit(@number, px);
+  }
+  .mtb-@{number} {
+    margin-top: unit(@number, px);
+    margin-bottom: unit(@number, px);
+  }
+  .p-@{number} {
+    padding: unit(@number, px);
+  }
+  .pt-@{number} {
+    padding-top: unit(@number, px);
+  }
+  .pr-@{number} {
+    padding-right: unit(@number, px);
+  }
+  .pb-@{number} {
+    padding-bottom: unit(@number, px);
+  }
+  .pl-@{number} {
+    padding-left: unit(@number, px);
+  }
+  .plr-@{number} {
+    padding-right: unit(@number, px);
+    padding-left: unit(@number, px);
+  }
+  .ptb-@{number} {
+    padding-top: unit(@number, px);
+    padding-bottom: unit(@number, px);
+  }
+}
+
+.loop(@count) when (@count > 1) {
+  .loop((@count - 1));
+}
+.loop(6);
+
+@font-face {
+  font-family: DINCondensed;
+  src: url(~@/assets/fonts/DIN-Condensed-Bold.woff), url(~@/assets/fonts/DIN-Condensed-Bold.woff2);
+}
+
+@font-face {
+  font-family: Electrolize;
+  src: url(~@/assets/fonts/Electrolize-Regular.woff), url(~@/assets/fonts/Electrolize-Regular.woff2);
+}
+
+.ant-tabs.ant-tabs-left > .ant-tabs-content-holder {
+  overflow: hidden;
+}
+.ant-picker-dropdown {
+  .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+  .ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+  .ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+    color: #fff;
+  }
+}
+.ant-modal-close {
+  &:focus,
+  &:hover {
+    .ant-modal-close-x {
+      color: @text-color-light;
+    }
+  }
+}
+
+.ant-tree.ant-tree-icon-hide {
+  background-color: transparent;
+}
+
+
+.ant-switch {
+  .ant-switch-inner {
+    color: @text-color;
+  }
+  .ant-switch-handle::before {
+    background-color: fade(@text-color, 45);
+  }
+}
+
+.ant-radio-group .ant-radio-button-wrapper-checked:not([class*=' ant-radio-button-wrapper-disabled']).ant-radio-button-wrapper:first-child {
+  border-right-color: transparent;
+}

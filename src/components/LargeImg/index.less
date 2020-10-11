@@ -1,0 +1,28 @@
+@lightGray: rgba(255, 255, 255, 0.65);
+@darkGray: rgba(0, 0, 0, 0.65);
+
+.prev,
+.next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  height: 120px;
+  line-height: 120px;
+  margin: auto;
+  font-size: 40px;
+  text-align: center;
+  color: @lightGray;
+  background: @darkGray;
+  transition: color 0.3s;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+  }
+}
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}

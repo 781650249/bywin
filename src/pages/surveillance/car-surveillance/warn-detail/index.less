@@ -1,0 +1,300 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  height: 100%;
+  padding: 12px;
+}
+.containner {
+  position: relative;
+  display: flex;
+  flex: auto;
+  background: @surveillance-bg;
+  .closeBtn {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+      color: @surveillance-white;
+    }
+  }
+  .drawingBar {
+    position: relative;
+    flex-shrink: 0;
+    width: 72%;
+    min-width: 822px;
+    height: calc(100% - 24px);
+    margin: 12px;
+    background: url('../images/warn-detail-bg.jpg');
+    background-position: 42% 0;
+    background-size: 156% 101%;
+    border: 1px solid @surveillance-drawing-border;
+    border-radius: 4px;
+    &Title {
+      position: absolute;
+      top: 12px;
+      right: 0;
+      left: 0;
+      width: 30.68%;
+      min-width: 315.5px;
+      height: 20px;
+      margin: 0 auto;
+      color: @surveillance-white;
+      font-size: 18px;
+      line-height: 20px;
+      text-align: center;
+      background: url('../images/warn-detail-title.png');
+      background-size: 100% 100%;
+    }
+    .modelBar {
+      position: absolute;
+      right: 0;
+      bottom: 22.4%;
+      left: 0;
+      width: 58.88%;
+      height: 36.26%;
+      margin: 0 auto;
+      animation: ishide 2s linear 1;
+      &Contain {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url('../images/car-model.png') no-repeat;
+        background-size: 100% 100%;
+        animation: rise 2s linear 1;
+        .rightTopBox {
+          position: absolute;
+          top: -160px;
+          right: -24%;
+          width: 268px;
+          height: 98px;
+          background: url('../images/addr-bg.png') no-repeat;
+          background-size: 100% 100%;
+          animation: arise 3s linear 1;
+          &::before {
+            position: absolute;
+            top: 60px;
+            left: -30px;
+            width: 1px;
+            height: 105px;
+            border-left: 1.5px dashed #37a5ff;
+            transform: rotate(35deg);
+            content: '';
+          }
+          &Info {
+            position: absolute;
+            top: -2px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 175px;
+            height: 100%;
+            & > p {
+              margin-bottom: 0;
+            }
+          }
+        }
+        .leftBox {
+          position: absolute;
+          top: -80px;
+          left: -12%;
+          width: 236px;
+          height: 84px;
+          background: url('../images/user-info-bg.png') no-repeat;
+          background-size: 100% 100%;
+          animation: arise 4s linear 1;
+          &::after {
+            position: absolute;
+            top: 46px;
+            right: -28px;
+            width: 1px;
+            height: 82px;
+            border-left: 1.5px dashed #37a5ff;
+            transform: rotate(-35deg);
+            content: '';
+          }
+          @media screen and (max-width: 1680px) {
+            &::after {
+              right: -16px;
+              height: 72px;
+              transform: rotate(-15deg);
+              content: '';
+            }
+          }
+          @media screen and (max-width: 1440px) {
+            &::after {
+              right: -10px;
+              height: 62px;
+              transform: rotate(-10deg);
+              content: '';
+            }
+          }
+          &Info {
+            position: absolute;
+            top: -2px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 165px;
+            height: 100%;
+            & > p {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+    .cardList {
+      position: absolute;
+      right: 0;
+      bottom: 16px;
+      left: 0;
+      display: flex;
+      align-items: center;
+      width: calc(100% - 24px);
+      height: 144px;
+      margin: 0 auto;
+      &Pref, &Next {
+        flex-shrink: 0;
+        font-size: 42px;
+        border-color: @surveillance-primary-color;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+      &Content {
+        display: flex;
+        flex: auto;
+        height: 100%;
+        margin: 0 6px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .cardItem {
+          position: relative;
+          flex-shrink: 0;
+          width: 248px;
+          margin-right: 16px;
+          border: 2px solid #4F5DB2;
+          &Header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 26px;
+            background: rgba(0,0,0,0.57);
+            &>:first-child {
+              &>:first-child {
+                margin: 0 6px;
+              }
+            }
+          }
+          &Content {
+            width: 100%;
+            height: calc(100% - 26px);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .rightContent {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    min-width: 304px;
+    margin: 32px 0 12px 8px;
+    padding-right: 24px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overflow-y: overlay;
+    :global {
+      .ant-form-item {
+        margin-bottom: 12px;
+      }
+    }
+    .noticeRecord {
+      margin: 12px 0 24px 0;
+      &Item {
+        position: relative;
+        height: 120px;
+        margin-bottom: 12px;
+        padding: 14px 12px;
+        border: 1px solid @surveillance-drawing-border;
+        .cornerMark {
+          position: absolute;
+          top: 0;
+          right: 0;
+          min-width: 132px;
+          height: 24px;
+          padding-right: 4px;
+          padding-left: 16px;
+          line-height: 24px;
+          text-align: center;
+          background: @surveillance-mark-bg;
+          border-radius: 0 0 0 48px;
+          & > :last-child {
+            margin-left: 2px;
+          }
+        }
+        & > p {
+          margin-bottom: 10px;
+          .tag {
+            padding: 1px 10px;
+            color: @surveillance-white;
+            background: @surveillance-mark-bg;
+            border-radius: 2px;
+          }
+
+          & > :first-child {
+            color: @surveillance-card-font-label;
+          }
+          & > :last-child {
+            margin-left: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes rise {
+  0% {
+    transform: translateY(105%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes ishide {
+  0% {
+    overflow: hidden;
+  }
+  99.9% {
+    overflow: hidden;
+  }
+  100% {
+    overflow: visible;
+  }
+}
+
+@keyframes arise {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

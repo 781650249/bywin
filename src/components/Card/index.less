@@ -1,0 +1,58 @@
+@import '~@/styles/theme.less';
+
+.card {
+  position: relative;
+  flex: 1;
+  flex-shrink: 0;
+  min-width: 280px;
+  max-width: 360px;
+  height: 120px;
+  padding: 10px;
+  background-color: @card-bg;
+  box-shadow: @card-shadow;
+  &:hover {
+    .close {
+      opacity: 1;
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.avatar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  // box-shadow:  0 0 0 3px @card-border-avatar inset;
+  border: 3px solid @card-border-avatar;
+}
+
+.info {
+  margin-left: 112px;
+}
+.title {
+  height: 20px;
+  margin-bottom: 8px;
+  color: @card-text-color;
+  font-size: 16px;
+  line-height: 20px;
+  a {
+    color: inherit;
+  }
+}
+.describe {
+  height: 20px;
+  margin-bottom: 16px;
+  line-height: 20px;
+  a {
+    color: inherit;
+  }
+}

@@ -1,0 +1,61 @@
+@import '~@/styles/theme.less';
+
+.leftBar {
+  position: relative;
+  width: 252px;
+  border-right: 1px solid @community-bar-border;
+}
+
+.customPanel {
+  overflow: hidden;
+  // background-image: linear-gradient(180deg, fade(@white, 0) 0%, fade(#2C3443, 10) 100%);
+  background-image: @community-collapse-bg;
+  border: 0 !important;
+  border-radius: 2px;
+  :global {
+    .ant-collapse-header {
+      padding: 6px 20px !important;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px !important;
+    }
+    .ant-collapse-content {
+      background: @community-bg !important;
+    }
+    .ant-collapse-content-box {
+      padding: 10px 20px !important;
+    }
+    .ant-collapse-arrow {
+      font-size: 14px !important;
+    }
+  }
+}
+
+.tree {
+  :global {
+    .ant-tree-treenode {
+      font-size: 16px;
+    }
+    .ant-tree-node-selected {
+      color: @primary-color;
+      border-radius: 2px;
+    }
+    .ant-tree-switcher-icon, .ant-select-tree-switcher-icon {
+      font-size: 14px !important;
+    }
+  }
+}
+
+.btnWrap {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 8px;
+}
+.modalBox {
+  display: flex;
+  margin-bottom: 24px;
+  line-height: 32px;
+}

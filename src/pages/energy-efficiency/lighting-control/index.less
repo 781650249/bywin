@@ -1,0 +1,199 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 8px 16px 16px;
+  background-color: @lighting-bg;
+}
+
+.title {
+  margin-bottom: 8px;
+  :global {
+    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      padding: 0;
+      background-color: transparent;
+      border-color: transparent;
+      outline: none;
+    }
+    .ant-select-focused.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      box-shadow: 0 0 0 0 transparent;
+    }
+    .ant-select-arrow {
+      color: @text-color;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex: auto;
+}
+.kanban {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 20.833333vw;
+  min-width: 300px;
+  max-width: 400px;
+  margin-right: 16px;
+  padding: 16px;
+  overflow: auto;
+  border: @lighting-kanban-border;
+}
+.setting {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  line-height: 24px;
+  text-align: center;
+  background-color: @primary-color;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.content {
+  flex: auto;
+  padding: 16px;
+  background-color: @lighting-content-bg;
+  background-image: url(./images/content-bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 75%;
+}
+
+.total {
+  display: flex;
+  height: 72px;
+  margin: 8px 0 24px 32px;
+  &Icon {
+    width: 72px;
+    height: 72px;
+    margin-right: 16px;
+    background: url(./images/icon-total.png) no-repeat;
+    background-size: 100% 100%;
+  }
+  &Content {
+    flex: auto;
+    span {
+      margin-right: 8px;
+      color: @lighting-number-color;
+      font-size: 24px;
+      vertical-align: sub;
+    }
+    p {
+      margin-bottom: 0;
+      &:first-child {
+        height: 40px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+.electricity {
+  display: flex;
+  height: 44px;
+  padding-left: 8px;
+  &Icon {
+    width: 44px;
+    height: 44px;
+    margin-right: 8px;
+    background: url(./images/icon-electricity.png) no-repeat;
+    background-size: 100% 100%;
+  }
+  &Content {
+    flex: auto;
+    span {
+      margin-right: 4px;
+      color: @lighting-number-color;
+      font-size: 24px;
+      line-height: 1;
+      vertical-align: sub;
+    }
+    p {
+      margin-bottom: 0;
+      &:first-child {
+        height: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+.rate {
+  &Item {
+    margin-bottom: 8px;
+    line-height: 32px;
+    span {
+      margin-left: 8px;
+      color: @lighting-number-color;
+      font-size: 18px;
+      line-height: 32px;
+      vertical-align: bottom;
+      &::after {
+        margin-left: 4px;
+        color: @text-color;
+        font-size: 12px;
+        content: '台';
+      }
+    }
+  }
+}
+
+.chart {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  // height: calc(100% - 104px - 68px - 112px - 112px - 32px);
+  margin-top: 32px;
+  &Title {
+    margin-bottom: 16px;
+    // position: relative;
+    // height: 20px;
+    // line-height: 20px;
+    // text-indent: 8px;
+    // &::before {
+    //   position: absolute;
+    //   top: 3px;
+    //   left: 0;
+    //   display: block;
+    //   width: 3px;
+    //   height: 14px;
+    //   background-color: @primary-color;
+    //   border-radius: 1px;
+    //   content: ''
+    // }
+    &Extra {
+      float: right;
+      width: 144px;
+      white-space: nowrap;
+      span {
+        display: inline-block;
+        width: 50%;
+        line-height: 20px;
+        &::before {
+          display: inline-block;
+          width: 12px;
+          height: 4px;
+          margin-right: 4px;
+          margin-bottom: 4px;
+          line-height: 0;
+          content: '';
+        }
+        &:first-child::before {
+          background-color: @proces-color;
+        }
+        &:last-child::before {
+          background-color: @primary-color;
+        }
+      }
+    }
+  }
+  &Content {
+    flex: auto;
+  }
+}

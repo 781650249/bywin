@@ -1,0 +1,89 @@
+// .node {
+//   left: 276px !important;
+//   top: 57px !important;
+// }
+
+.hourMinute {
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+  color: hsla(0, 0%, 100%, 0.65);
+  line-height: 24px;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  // background-color: #fff;
+  cursor: pointer;
+  &.active {
+    color: #fff;
+    background-color: #1890ff;
+  }
+}
+.node {
+  color: hsla(0, 0%, 100%, 0.65);
+  :global {
+    .ant-calendar {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+    .ant-calendar-time .ant-calendar-footer {
+      .ant-calendar-time-picker-btn,
+      .ant-calendar-ok-btn {
+        display: none;
+      }
+    }
+
+    .ant-calendar-input {
+      color: hsla(0, 0%, 100%, 0.65);
+      background: transparent;
+    }
+    .ant-calendar-selected-date .ant-calendar-date,
+    .ant-calendar-selected-start-date .ant-calendar-date,
+    .ant-calendar-selected-end-date .ant-calendar-date {
+      color: #fff;
+      background: #1890ff;
+      &:hover {
+        background: #1890ff;
+      }
+    }
+
+    .ant-calendar-input-wrap,
+    .ant-calendar-header,
+    .ant-calendar-footer,
+    .ant-calendar-month-panel-header,
+    .ant-calendar-year-panel-header {
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+    .ant-calendar,
+    .ant-calendar-year-panel,
+    .ant-calendar-month-panel {
+      background-color: #2d394f;
+    }
+    .ant-calendar-year-panel-selected-cell,
+    .ant-calendar-month-panel-selected-cell {
+      .ant-calendar-year-panel-year,
+      .ant-calendar-month-panel-month {
+        color: #fff;
+        &:hover {
+          background: #1890ff;
+        }
+      }
+    }
+    .ant-calendar-disabled-cell {
+      .ant-calendar-date {
+        background: rgba(0, 0, 0, 0.2);
+        &:hover {
+          background: rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+    .ant-calendar-date,
+    .ant-calendar-year-panel-year,
+    .ant-calendar-month-panel-month {
+      color: hsla(0, 0%, 100%, 0.65);
+      &:hover {
+        background-color: hsla(0, 0%, 100%, 0.1);
+      }
+    }
+  }
+}

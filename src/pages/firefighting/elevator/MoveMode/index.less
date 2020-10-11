@@ -1,0 +1,127 @@
+@import '~@/styles/theme.less';
+
+.titleBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20px;
+  margin-bottom: 20px;
+  .title {
+    color: @elevator-white;
+    font-size: 16px;
+    letter-spacing: 0.48px;
+  }
+  .legendWrapper {
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: flex-end;
+    & > span {
+      position: relative;
+      margin-left: 42px;
+      &::before {
+        position: absolute;
+        top: 4px;
+        left: -22px;
+        width: 12px;
+        height: 12px;
+        content: '';
+      }
+    }
+    & > :nth-child(1) {
+      &::before {
+        background: @proces-color;
+      }
+    }
+    & > :nth-child(2) {
+      &::before {
+        background: @warning-color;
+      }
+    }
+    & > :nth-child(3) {
+      &::before {
+        background: @error-color;
+      }
+    }
+  }
+}
+
+.content {
+  position: relative;
+  height: calc(100% - 40px);
+  .axisY {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 36px;
+    height: calc(100% - 24px);
+    border-right: 2px solid @elevator-bar-border;
+    &Scale {
+      display: flex;
+      flex: 1;
+      flex-shrink: 0;
+      align-items: center;
+      padding-left: 4px;
+      color: @elevator-white;
+      font-size: 12px;
+    }
+  }
+  .series {
+    position: absolute;
+    left: 38px;
+    display: flex;
+    width: calc(100% - 38px);
+    height: calc(100% - 24px);
+    &Box {
+      position: relative;
+      width: 36px;
+      height: 100%;
+      margin-left: 12px;
+      background: @elevator-card-bg;
+      &Content {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        color: @elevator-white;
+        font-size: 12px;
+        text-align: center;
+        transition: all 1s;
+        &>img {
+          width: 24px;
+          height: 43px;
+        }
+        .tooltip {
+          position: absolute;
+          top: 17px;
+          left: 42px;
+          min-width: 48px;
+          height: 2px;
+          background: fade(@elevator-white, 20);
+          &Content {
+            position: absolute;
+            top: -24px;
+            right: -64px;
+            width: 50px;
+            height: 48px;
+            &>:first-child {
+              margin-bottom: 4px;
+              line-height: 24px;
+              &>:first-child {
+                font-weight: bold;
+                font-size: 24px;
+              }
+              &>:last-child {
+                margin-left: 6px;
+                font-size: 12px;
+              }
+            }
+            // &>:last-child {
+            //   white-space: nowrap;
+            // }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import '~@/styles/theme.less';
+
+.searchBox {
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+  margin-bottom: 24px;
+  .rightBox {
+    display: flex;
+    justify-content: space-between;
+    .divider {
+      height: 28px;
+      margin: 2px 24px;
+      background: @video-archive-divider-color;
+    }
+    .unCheckedClass {
+      line-height: 32px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .checkedClass {
+      color: @text-color-light;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 32px;
+      transition: all 0.15s;
+    }
+  }
+  .leftBox {
+    display: flex;
+    line-height: 32px;
+    :global(.ant-radio-button-wrapper-checked:not([class*=' ant-radio-button-wrapper-disabled']).ant-radio-button-wrapper:first-child) {
+      border-right-color: transparent;
+    }
+    .timeBox {
+      display: flex;
+      .timeIcon {
+        width: 32px;
+        text-align: center;
+        background: @input-icon-bg;
+        border-radius: 2px 0 0 2px;
+      }
+      :global(.ant-picker) {
+        border-radius: 0 2px 2px 0;
+      }
+    }
+  }
+}
+
+.pageBox {
+  height: 62px;
+  padding: 12px 18px;
+  line-height: 42px;
+  text-align: right;
+}

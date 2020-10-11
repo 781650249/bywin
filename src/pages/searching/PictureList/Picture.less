@@ -1,0 +1,160 @@
+@import '~@/styles/theme.less';
+
+.wrap {
+  position: relative;
+  width: 172px;
+  height: 172px;
+  overflow: hidden;
+  background-color: @seaerch-image-bg;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.2s;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  &:global(.active) {
+    border-color: @primary-color;
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      display: block;
+      width: 0;
+      height: 0;
+      border: 16px solid @primary-color;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      content: '';
+    }
+  }
+  &:global(.scale) {
+    z-index: 1;
+    transform: scale(1.12);
+  }
+}
+
+// 刷新图片按钮
+.reload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  height: 40px;
+  margin: auto;
+  color: #fff;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+  i {
+    font-size: 20px;
+  }
+  span {
+    display: block;
+    font-size: 12px;
+  }
+  &::after {
+    content: '';
+  }
+}
+
+.number {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  z-index: 1;
+  width: 16px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+}
+
+.info {
+  position: absolute;
+  // top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  color: rgba(255, 255, 255, .85);
+  text-align: left;
+  background-color: rgba(0, 0, 0, .35);
+  transition: bottom 0.15s linear 0.35s;
+}
+
+.actions {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  transition: bottom 0.15s linear 0.35s;
+  user-select: none;
+  & > div {
+    width: calc(50% - 1px);
+    height: 24px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.65);
+    cursor: pointer;
+  }
+}
+.wrap:hover {
+  .actions {
+    bottom: 0;
+  }
+  .info {
+    bottom: 48px;
+  }
+}
+
+.items {
+  position: absolute;
+  right: 2px;
+  bottom: -66px;
+  left: 2px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-content: space-between;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 61px;
+  transition: bottom 0.15s linear;
+}
+.item {
+  display: block;
+  width: calc((100% - 2px) / 3);
+  height: 30px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 30px;
+  background: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+  transition: background 0.15s;
+  &:hover {
+    background: @primary-color;
+  }
+  & > a {
+    color: #fff;
+  }
+  &.disabled {
+    color: #d3d3d3;
+    cursor: not-allowed;
+    &:hover {
+      background: rgba(0, 0, 0, 0.85);
+    }
+  }
+}

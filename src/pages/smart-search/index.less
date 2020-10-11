@@ -1,0 +1,53 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px 24px;
+  background-color: @white;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  :global {
+    .ant-radio-button-wrapper,
+    .ant-radio-button-wrapper-checked {
+      border-width: 0;
+      &:focus,
+      &:focus-within {
+        outline: none;
+      }
+      &:not(.ant-radio-button-wrapper-disabled):focus-within {
+        outline: none;
+        box-shadow: 0 0 0 0;
+      }
+    }
+    .ant-radio-button-wrapper:not(:first-child)::before {
+      visibility: hidden;
+    }
+    .ant-input {
+      line-height: 35px;
+    }
+    .ant-input-group-addon,
+    .ant-input-group-wrap {
+      width: 64px;
+    }
+    .ant-btn-lg {
+      height: 50px;
+      padding: 0 20px;
+      font-size: 20px;
+      line-height: 50px;
+      letter-spacing: 0.2em;
+    }
+  }
+  .history {
+    padding-left: 15px;
+    line-height: 40px;
+  }
+}
+.content {
+  flex: auto;
+}

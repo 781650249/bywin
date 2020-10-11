@@ -1,0 +1,89 @@
+@import '~@/styles/theme.less';
+
+.rightWrapper {
+  position: relative;
+  flex: auto;
+  margin-left: 16px;
+}
+
+.mapWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: calc(100% - 142px);
+  background-color: @community-bg;
+}
+
+.slick {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  &Prev,
+  &Next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 40px;
+  }
+  &Prev {
+    position: absolute;
+    left: 2px;
+  }
+  &Next {
+    position: absolute;
+    right: 2px;
+  }
+  &List {
+    width: calc(100% - 96px);
+    margin: 0 48px;
+    padding: 6px;
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+  &Track {
+    // display: flex;
+    // flex-wrap: nowrap;
+    height: 136px;
+    padding-top: 12px;
+    white-space: nowrap;
+  }
+  &Slide {
+    position: relative;
+    display: inline-block;
+    width: 296px;
+    height: 120px;
+    margin-right: 16px;
+    padding: 8px 16px;
+    overflow: hidden;
+    background: @community-slide-card-bg;
+    box-shadow: 0 2px 16px 0 @community-slide-box-shadow;
+  }
+}
+.avatar {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 104px;
+  height: 104px;
+  cursor: pointer;
+}
+.content {
+  margin-left: 116px;
+  line-height: 20px;
+  p {
+    margin-bottom: .5em;
+    font-size: 14px;
+  }
+  :first-child {
+    color: @community-font-black;
+    font-weight: 600;
+    font-size: 16px;
+  }
+}

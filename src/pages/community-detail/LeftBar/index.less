@@ -1,0 +1,226 @@
+@import '~@/styles/theme.less';
+
+.leftBar {
+  flex-shrink: 0;
+  width: 374px;
+  padding-right: 20px;
+  border-right: 1px solid @community-bar-border;
+}
+.search {
+  display: flex;
+  align-items: center;
+  width: 352px;
+  height: 40px;
+  background: @community-search-bg;
+  border: 1px solid @community-search-border;
+  border-radius: 2px;
+  &Title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 86px;
+    height: 28px;
+    padding-right: 14.5px;
+    padding-left: 12.5px;
+    border-right: 1px solid @community-search-border;
+    &>span {
+      font-size: 16px;
+      letter-spacing: 0.37px;
+    }
+  }
+  &Select {
+    flex: auto;
+    :global {
+      .ant-select {
+        width: 100%;
+      }
+      .ant-select-single.ant-select-show-arrow .ant-select-selection-item, .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+        padding-left: 12px;
+        font-size: 16px;
+        letter-spacing: 0.37px;
+      }
+      .ant-select-arrow {
+        color: @community-search-icon-color;
+      }
+    }
+  }
+}
+.cardWraper {
+  display: flex;
+  flex: auto;
+  justify-content: space-between;
+  height: 66px;
+  margin: 16px 0;
+  .card {
+    width: 80px;
+    padding: 10px 0 6px 0;
+    text-align: center;
+    border-radius: 4px;
+    :first-child {
+      margin-bottom: 6px;
+      color: @white;
+      font-size: 22px;
+      line-height: 26px;
+      letter-spacing: 0.67px;
+    }
+    :last-child {
+      margin-bottom: 0;
+      color: fade(@white, 80%);
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.32px;
+    }
+  }
+}
+
+.unit {
+  position: relative;
+  flex: auto;
+  height: calc(100% - 178px);
+  &Nav {
+    display: flex;
+    height: 32px;
+    margin-right: 48px;
+    overflow: auto;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &Tab {
+      flex-shrink: 0;
+      width: 76px;
+      color: @community-tab-color;
+      font-size: 12px;
+      line-height: 32px;
+      letter-spacing: 0.55px;
+      text-align: center;
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    &CheckedTab {
+      position: relative;
+      background: @community-tab-checked-bg;
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: @primary-color;
+        content: '';
+      }
+    }
+  }
+  &Arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40px;
+    height: 32px;
+    &>div {
+      width: 18px;
+      height: 18px;
+      color: @community-switch-icon-color;
+      font-size: 10px;
+      line-height: 16px;
+      text-align: center;
+      background: @community-switch-icon-bg;
+      border: 1px solid @community-switch-icon-border;
+      border-radius: 1px;
+      cursor: pointer;
+    }
+  }
+  &Content {
+    height: calc(100% - 32px);
+    padding: 12px 12px 12px 16px;
+    overflow: auto;
+    background: @community-tab-checked-bg;
+    .floorCard {
+      min-height: 46px;
+      .floorTitle {
+        display: flex;
+        height: 16px;
+        &>span {
+          margin-right: 6px;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.55px;
+        }
+      }
+      .roomList {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 4px;
+        margin-bottom: 12px;
+        .col, .checkedCol {
+          flex-shrink: 0;
+          width: 59px;
+          height: 26px;
+          margin-right: 3.5px;
+          margin-bottom: 4px;
+          font-size: 12px;
+          line-height: 26px;
+          letter-spacing: 0.55px;
+          text-align: center;
+          background: @community-col-bg;
+          border-radius: 1px;
+          cursor: pointer;
+        }
+        .checkedCol {
+          color: @white;
+          background: @primary-color;
+        }
+      }
+    }
+  }
+}
+
+.legendWrapper {
+  height: 18px;
+  margin-top: 16px;
+  line-height: 18px;
+  &>span {
+    position: relative;
+    margin-right: 18px;
+    padding-left: 9px;
+    font-size: 12px;
+    letter-spacing: 0.55px;
+    &::before {
+      position: absolute;
+      top: 2px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 3px;
+      height: 12px;
+      border-radius: 2px;
+      content: '';
+    }
+  }
+  .legendRed {
+    &::before {
+      background-color: #B73D28;
+    }
+  }
+  .legendYellow {
+    &::before {
+      background-color: #F3B53D;
+    }
+  }
+  .legendGreen {
+    &::before {
+      background-color: #18A239;
+    }
+  }
+  .legendBlue {
+    &::before {
+      background-color: #0764DA;
+    }
+  }
+}

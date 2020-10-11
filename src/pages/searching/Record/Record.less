@@ -1,0 +1,24 @@
+@import '~@/styles/theme.less';
+
+.expandedHide {
+  :global {
+    .ant-table-row-expand-icon {
+      display: none;
+    }
+
+  }
+  & + :global(.ant-table-expanded-row) {
+    display: none;
+  }
+
+}
+.modal {
+  :global {
+    .ant-table thead > tr > th {
+      background-color: darken(@seaerch-header-bg, 8);
+    }
+    .ant-form {
+      margin-bottom: 8px;
+    }
+  }
+}

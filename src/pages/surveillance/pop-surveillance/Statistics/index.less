@@ -1,0 +1,259 @@
+@import '~@/styles/theme.less';
+
+.titleBox {
+  position: absolute;
+  width: 100%;
+  height: 24px;
+  margin-left: -1.35%;
+  color: @surveillance-white;
+  font-size: 22px;
+  line-height: 24px;
+  text-align: center;
+}
+.siteBox {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 262px;
+  height: 72px;
+  padding: 14px 12px 16px 76px;
+  color: @surveillance-white;
+  background: url(../images/site-bg.png) no-repeat;
+  background-size: 100% 100%;
+  &>p {
+    margin-bottom: 0;
+  }
+}
+.todayBar {
+  position: absolute;  
+  top: 18px;
+  left: 22px;
+  display: flex;
+  flex-direction: column;
+  width: 31.85%;
+  height: 34.46%;
+  .pieChart {
+    position: relative;
+    display: flex;
+    flex: auto;
+    margin: 16px -16px;
+    &Center {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 98px;
+      height: 98px;
+      margin: auto;
+      color: @surveillance-white;
+      font-size: 12px;
+      background-image: radial-gradient(50% 100%, rgba(61,153,255,0.00) 0%, #3D99FF 100%);
+      border-radius: 50%;
+      .chartNum {
+        margin-right: 6px;
+        font-size: 22px;
+        font-family: DINCondensed, sans-serif;
+      }
+    }
+    @media screen and (max-height: 820px) {
+      &Center {
+        width: 86px;
+        height: 86px;
+      }
+    }
+    @media screen and (max-height: 720px) {
+      &Center {
+        width: 78px;
+        height: 78px;
+      }
+    }
+  }
+}
+.warnBar {
+  position: absolute;  
+  top: calc(34.45% + 18px);
+  left: 22px;
+  display: flex;
+  flex-direction: column;
+  width: 31.85%;
+  height: 38.04%;
+  &Content {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    padding: 14px;
+    &Top {
+      display: flex;
+      align-items: center;
+      height: 44px;
+      padding-left: 22px;
+      background-image: linear-gradient(90deg, rgba(64,148,223,0.28) 1%, rgba(79,180,216,0.00) 100%);
+      border-radius: 22px 0 0 22px;
+      &>:first-child {
+        color: @surveillance-num-light;
+        font-size: 44px;
+        font-family: DINCondensed, sans-serif;
+        letter-spacing: 2.18px;
+      }
+      &>:last-child {
+        margin-left: 12px;
+        &>span {
+          display: block;
+          color: fade(@surveillance-white, 65);
+          font-size: 12px;
+          line-height: 16px;
+        }
+        &>:first-child {
+          color: @surveillance-num-light;
+          font-size: 14px;
+        }
+      }
+    }
+    .lineChart {
+      flex: auto;
+      margin: 32px -16px 16px -16px;
+    }
+  }
+}
+.areaBar {
+  position: absolute;  
+  top: calc(72.5% + 18px);
+  left: 22px;
+  width: calc(100% - 22px);
+  height: calc(27.5% - 18px);
+  &Title{
+    width: 30.25%;
+  }
+  &Btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    width: 80px;  
+    height: 24px;
+    background-image: @surveillance-btn-bg;
+    border: 1px solid @surveillance-btn-border;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all .15s;
+    user-select: none;
+    &:hover {
+      background-image: @surveillance-btn-bg-hover;
+      border: 1px solid fade(@surveillance-btn-border, 80);
+    }
+    &:active {
+      background-image: @surveillance-btn-bg;
+      border: 1px solid @surveillance-btn-border;
+    }
+    &>:first-child {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &Content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 32px);
+    .list {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;  
+      height: 71.42%;  
+      &Pref, &Next {
+        font-size: 48px;
+        border-color: @surveillance-primary-color;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+      &Pref {
+        margin-right: 6px;
+        margin-left: 8px;
+        
+      }
+      &Next {
+        margin-right: 22px;
+        margin-left: 6px;
+      }
+      &Content {
+        display: flex;
+        flex: auto;
+        height: 100%;
+        overflow: auto;
+        scroll-behavior: smooth;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .itemCard {
+          display: flex;
+          flex-direction: column;
+          flex-shrink: 0;
+          width: 24.05%;
+          min-width: 212px;
+          max-width: 248px;
+          margin-right: 8px;
+          padding: 6px 18px 10px 18px;
+          background: @surveillance-card-bg;
+          border: 1px solid @surveillance-card-border;
+          &Title {
+            position: relative;
+            padding-left: 10px;
+            color: @surveillance-white;
+            font-size: 12px;
+            &::before {
+              position: absolute;
+              top: 8px;
+              left: -2px;
+              width: 4px;
+              height: 4px;
+              background: @surveillance-card-before-bg;
+              border-radius: 2px;
+              content: '';
+            }
+          }
+          &Info {
+            display: flex;
+            flex: auto;
+            align-items: center;
+            justify-content: space-between;
+            color: @surveillance-white;
+            font-size: 12px;
+            .divider {
+              width: 1px;
+              height: 20px;
+              background: #17B8ED;
+            }
+            &Left {
+              padding-left: 12px;
+              &>:first-child {
+                &>:first-child {
+                  margin-right: 4px;
+                  color:@surveillance-num-light;
+                  font-size: 24px;
+                  font-family: DINCondensed, sans-serif;
+                }
+              }
+            }
+            &Right {
+              padding-right: 12px;
+              text-align: right;
+              &>:first-child {
+                &>:first-child {
+                  margin-right: 4px;
+                  color: @surveillance-num-dark;
+                  font-size: 24px;
+                  font-family: DINCondensed, sans-serif;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

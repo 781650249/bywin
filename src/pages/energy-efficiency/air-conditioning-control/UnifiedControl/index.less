@@ -1,0 +1,204 @@
+@import '~@/styles/theme.less';
+
+.unifiedControl {
+  display: flex;
+  height: 224px;
+  margin-bottom: 8px;
+  padding: 16px;
+  background-color: @acc-control-bg;
+}
+
+.status {
+  display: flex;
+  flex-shrink: 0;
+  width: 23.4375vw;
+  min-width: 338px;
+  margin: 16px 0;
+  padding-top: 24px;
+  border-right: 1px solid @acc-divider-color;
+  & > div {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+  }
+}
+.temperature,
+.windSpeed,
+.switch {
+  flex: 1;
+  margin-top: 16px;
+  margin-left: 32px;
+}
+
+.temperature {
+  :global {
+    .ant-slider-track,
+    .ant-slider-rail {
+      height: 12px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+    }
+    .ant-slider-track {
+      background-image: linear-gradient(
+        -45deg,
+        rgb(19, 125, 136) 25%,
+        rgba(216, 216, 216, 0.5) 25%,
+        rgba(216, 216, 216, 0.5) 50%,
+        rgb(19, 125, 136) 50%,
+        rgb(19, 125, 136) 75%,
+        rgba(216, 216, 216, 0.5) 75%
+      );
+      background-size: 8px 8px;
+      border-radius: 6px;
+    }
+    .ant-slider-handle {
+      width: 16px;
+      height: 16px;
+      margin-top: -2px;
+      background-image: radial-gradient(50% 100%, rgb(23, 158, 173) 50%, rgb(19, 125, 136) 100%);
+      border-color: #a0a0a0;
+    }
+    .ant-slider {
+      height: 12px;
+      margin-top: 0;
+    }
+    .ant-slider:hover {
+      .ant-slider-track,
+      .ant-slider-rail {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+  .panel {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    overflow: hidden;
+    border-radius: 0 0 16px 16px;
+    &Item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      height: 44px;
+      background-color: @acc-input-bg;
+      &:nth-child(2n) {
+        border-left: 1px solid @acc-divider-color;
+      }
+      &:nth-child(n + 3) {
+        height: 45px;
+        border-top: 1px solid @acc-divider-color;
+      }
+      &Btn {
+        height: 24px;
+        padding: 0 12px;
+        line-height: 24px;
+        background: @acc-btn-bg;
+        border-radius: 12px;
+        box-shadow: 0 0 4px fade(@white, 20) inset;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        &:hover {
+          background-color: tint(@acc-btn-bg, 10);
+        }
+        &.active {
+          background-color: @primary-color;
+        }
+      }
+    }
+  }
+}
+.windSpeed {
+  &BtnGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    .btnCircle {
+      width: 44px;
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+      background-color: @acc-btn-bg;
+      border-radius: 50%;
+      box-shadow: 0 0 4px fade(@white, 20) inset;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: tint(@acc-btn-bg, 10);
+      }
+      &.active {
+        background-color: @primary-color;
+      }
+    }
+  }
+  &RadioGroup {
+    display: flex;
+    margin-top: 32px;
+    .radioButton {
+      flex: 1;
+      line-height: 32px;
+      text-align: center;
+      background-color: @acc-btn-bg;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: tint(@acc-btn-bg, 10);
+      }
+      &:first-child {
+        border-radius: 16px 0 0 16px;
+      }
+      &:last-child {
+        border-radius: 0 16px 16px 0;
+      }
+      &.active {
+        background-color: @primary-color;
+      }
+    }
+  }
+}
+
+// @media screen and (min-width: 1600px) {
+//   .status {
+//     width: 450px;
+//   }
+// }
+.switch {
+  &BtnGroup {
+    display: flex;
+    align-items: center;
+    height: calc(100% - 28px);
+  }
+  .btnWrapper {
+    flex: 1;
+    text-align: center;
+    p {
+      margin-top: 8px;
+    }
+  }
+  // .btnCircle {
+  //   display: inline-block;
+  //   width: 40px;
+  //   height: 40px;
+  //   line-height: 40px;
+  //   background-image: radial-gradient(
+  //     transparent,
+  //     fade(@acc-base-color, 15) 40%,
+  //     fade(@acc-base-color, 50) 100%
+  //   );
+  //   border-radius: 50%;
+  //   box-shadow: 0 0 0 1px @acc-control-bg, 0 0 0 2px fade(@acc-base-color, 45);
+  //   cursor: pointer;
+  //   transition: box-shadow 0.3s;
+  //   &:hover {
+  //     box-shadow: 0 0 0 1px @acc-control-bg, 0 0 0 2px fade(@acc-base-color, 65);
+  //   }
+  //   &.active {
+  //     background-image: radial-gradient(
+  //       transparent,
+  //       fade(@primary-color, 50) 40%,
+  //       fade(@primary-color, 100) 100%
+  //     );
+  //     box-shadow: 0 0 0 1px @acc-control-bg, 0 0 0 2px fade(@primary-color, 100);
+  //   }
+  // }
+}

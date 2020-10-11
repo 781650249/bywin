@@ -1,0 +1,85 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  height: calc(100vh - 24px);
+  padding: 12px;
+  overflow: hidden;
+  background-color: @person-manage-wrapper-bg;
+}
+.main {
+  display: flex;
+  height: 100%;
+  // padding: 22px 16px;
+  background-color: @person-manage-bg;
+  .tabsBar {
+    flex-shrink: 0;
+    width: 136px;
+    margin: 22px 0;
+    padding: 0 24px;
+    border-right: 1px solid @person-manage-divider-color;
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+      color: @person-manage-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.list {
+  height: 100%;
+  padding: 24px;
+  background-color: @person-manage-bg;
+}
+
+.labelsWrap {
+  display: flex;
+  .label {
+    height: 32px;
+    margin-right: 12px;
+    padding: 4px 15px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+    &:hover {
+      border: 1px solid @primary-color;
+      transition: all 0.15s;
+    }
+  }
+  .checkedLabel {
+    color: @white;
+    background: @primary-color;
+    border: 1px solid @primary-color;
+    transition: all 0.15s;
+  }
+}
+
+.header {
+  height: 32px;
+  padding: 0 24px 0 0;
+  span {
+    cursor: pointer;
+    transition: font-size 300ms;
+  }
+}
+.active {
+  color: @person-manage-active-color;
+  font-size: 18px;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: calc(100% - 32px - 32px - 32px);
+  margin: 16px -16px 16px 0;
+  padding: 8px 24px;
+  overflow: auto;
+}
+.footer {
+  height: 32px;
+  padding-right: 24px;
+  text-align: right;
+}

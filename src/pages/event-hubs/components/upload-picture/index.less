@@ -1,0 +1,54 @@
+@import '~@/styles/theme.less';
+
+.wrap {
+  :global {
+    .ant-modal {
+      top: 120px;
+    }
+    .ant-modal-content {
+      background: transparent;
+    }
+    .ant-modal-body {
+      padding: 0;
+    }
+    .ReactCrop {
+      float: left;
+      width: calc(100% - 42px);
+      margin-right: 6px;
+      img {
+        width: 100%;
+      }
+      .ReactCrop__crop-selection {
+        border: 2px solid #4751f1;
+      }
+      .ReactCrop__drag-handle {
+        border: 1px solid #4751f1;
+      }
+    }
+  }
+}
+.footer {
+  float: left;
+  width: 36px;
+  height: 72px;
+  background: fade(#000, 10%);
+  p {
+    margin: 0;
+    color: #fff;
+    font-size: 16px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    transition: color .3s;
+    &:hover {
+      color: #4751f1;
+    }
+  }
+}
+.hideIcon {
+  :global {
+    .ant-upload-list-picture-card .ant-upload-list-item-actions {
+      display: none;
+    }
+  }
+}

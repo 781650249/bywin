@@ -1,0 +1,59 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "globals": {
+    "L": true
+  },
+  "plugins": ["react-hooks"],
+  "rules": {
+    "arrow-body-style": ["error", "as-needed"],
+    "class-methods-use-this": 0,
+    "consistent-return": 0,
+    "import/prefer-default-export": 0,
+    "import/no-cycle": 0,
+    "import/no-default-export": 0,
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/control-has-associated-label": 0,
+    "jsx-a11y/label-has-associated-control": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }],
+    "no-restricted-syntax": 0,
+    "no-use-before-define": ["error", { "functions": false, "classes": true, "variables": true }],
+    "object-curly-newline": 0,
+    "operator-linebreak": ["error", "after", { "overrides": { "?": "ignore", ":": "ignore" } }],
+    "react/destructuring-assignment": 0,
+    "react/no-array-index-key": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/prefer-stateless-function": 0,
+    "react/prop-types": 0,
+    "react-hooks/exhaustive-deps": 1,
+    "react-hooks/rules-of-hooks": 2
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "legacyDecorators": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "16.12.0"
+    },
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack.config.js"
+      },
+      "node": { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    },
+    "polyfills": ["fetch", "promises", "URL", "object-assign"]
+  }
+}

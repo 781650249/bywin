@@ -1,0 +1,290 @@
+@import '~@/styles/theme.less';
+
+.wrap {
+  height: 100%;
+  padding: 15px;
+  // background-color: @car-bg;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    .title {
+      font-size: 16px;
+      color: #ffffff;
+      letter-spacing: 0.48px;
+      text-align: left;
+      line-height: 50px;
+      width: 16.67vw;
+    }
+ 
+
+    .closed {
+      align-items: center;
+      line-height: 50px;
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    display: flex;
+    height: calc(100% - 48px);
+
+    .left {
+      flex-shrink: 0;
+      width: 16.67vw;
+      min-width: 240px;
+      max-width: 320px;
+      padding: 6px;
+      background-color: @car-menu-bg;
+
+      .tree {
+        height: calc(100% - 40px);
+        overflow: auto;
+
+        :global {
+          .ant-tree {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    .subTitle {
+      position: absolute;
+      left: 330px;
+      top: 69px;
+      font-weight: bold;
+      // font-size: 18px;
+      line-height: 10px;
+    }
+
+    .right {
+      flex: auto;
+      height: 100%;
+      padding-left: 16px;
+      overflow-x: hidden;
+      display: flex;
+      position: relative;
+
+      // overflow: overlay;
+      .conleft {
+        // min-width: 40%;
+        // max-width: 50%;
+        flex-shrink: 0;
+        margin: 10px;
+        // background-color: @car-menu-bg;
+        padding: 10px;
+
+        .conBtn {
+          position: absolute;
+          right: 14px;
+          top: -29px;
+        }
+
+        .setting {
+          position: relative;
+          text-indent: 1em;
+
+          &::before {
+            position: absolute;
+            left: -9px;
+            top: 0px;
+            width: 3px;
+            height: 19px;
+            content: '';
+            background-color: rgb(71, 81, 241);
+          }
+        }
+
+        .add {
+          background-image: url(../../carInfo/images/add.png);
+          background-size: 100% 100%;
+          width: 24px;
+          height: 24px;
+          position: absolute;
+          right: 10px;
+          top: 6px;
+        }
+
+        :global {
+          .ant-form {
+            margin: 20px;
+          }
+          ::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+          }
+        }
+      }
+
+      .conRight {
+        // min-width: 50%;
+        // max-width: 55%;
+        // height: 100%;
+        flex-shrink: 0;
+        // background-color: @car-menu-bg;
+        margin: 10px;
+        padding: 10px;
+
+        .areaTitle {
+          position: relative;
+          text-indent: 0em;
+          margin-bottom: 20px;
+          &::before {
+            position: absolute;
+            left: -21px;
+            top: -1px;
+            width: 3px;
+            height: 19px;
+            content: '';
+            background-color: rgb(71, 81, 241);
+          }
+        }
+
+        .video {
+          width: 100%;
+          height: 300px;
+          position: relative;
+          background-color: black;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
+            height: 24px;
+            margin: auto;
+            font-size: 30px;
+            color: fade(@white, 65);
+            line-height: 24px;
+            text-align: center;
+            content: '暂无视频';
+          }
+        }
+        .ReactCrop {
+          z-index: 1 !important;
+        }
+      }
+      :global {
+        .ant-form {
+          margin: 20px;
+        }
+      }
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+
+      .ensure {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+:global {
+  .ant-form-item-control-input-content {
+    line-height: 31px;
+  }
+}
+
+.cardContent {
+  margin-top: 20px;
+  background-color: rgb(51, 60, 95);
+  display: flex;
+  width: 278px;
+  height: 76px;
+  position: relative;
+  // margin-left: 64px;
+
+  &:hover {
+    background-color: fade(@primary-color, 30);
+
+    .del {
+      opacity: 1;
+    }
+  }
+
+  .cardright {
+    margin-left: 8px;
+    margin-top: 10px;
+  }
+
+  .del {
+    opacity: 0;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+  }
+
+  .noticifyCon {
+    height: 96px;
+    width: 278px;
+    background-color: rgb(51, 60, 95);
+  }
+}
+
+.hiddenCard {
+  margin-top: 20px;
+  display: flex;
+  width: 278px;
+  height: 76px;
+  position: relative;
+  margin-left: 64px;
+}
+
+.addCarWrap {
+  // position: relative;
+  :global {
+    .ant-drawer-content-wrapper {
+      width: 720px !important;
+    }
+  }
+
+  .form {
+    height: 32px;
+    margin-bottom: 16px;
+
+    input::-webkit-input-placeholder {
+      color: fade(@text-color, 45);
+    }
+
+    :global {
+      .ant-select-selection-placeholder {
+        color: fade(@text-color, 100);
+      }
+
+      .ant-input,
+      .ant-picker,
+      .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+        background-color: @personnel-input-bg;
+        border-color: transparent;
+      }
+
+      // .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+      //   @personnel-base-bg
+      // }
+      .ant-select-item-option-active:not(.ant-select-item-option-disabled),
+      .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+        background-color: @personnel-input-bg;
+      }
+    }
+  }
+}
+
+.videoWrapper {
+  :global {
+    .ReactCrop__crop-selection {
+      border: 2px solid @error-color;
+      z-index: 1;
+    }
+    .ReactCrop__drag-handle {
+      display: none;
+    }
+  }
+}

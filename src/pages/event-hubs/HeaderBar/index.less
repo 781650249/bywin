@@ -1,0 +1,115 @@
+@import '~@/styles/theme.less';
+
+.hLeft {
+  display: flex;
+  width: 296px;
+  height: 100%;
+  padding: 6px 16px;
+  .addrAvatar {
+    width: 100px;
+    height: 100px;
+    margin-right: 18px;
+    border: 4px solid @event-img-border;
+    :global {
+      .ant-avatar-square {
+        border-radius: 1px;
+        img {
+          object-fit: unset;
+        }
+      }
+    }
+  }
+  .introduction {
+    .nameRow {
+      margin-bottom: 4px;
+      line-height: 32px;
+      :first-child {
+        margin-right: 8px;
+        color: @event-black-color;
+        font-weight: 600;
+        font-size: 20px;
+      }
+    }
+    .statusClass {
+      color: #38ab50;
+      font-size: 16px;
+      > span {
+        color: #38ab50;
+        font-size: 14px;
+      }
+    }
+    :global {
+      .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+        height: 24px;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.hCenter {
+  display: flex;
+  justify-content: space-evenly;
+  width: calc(100% - 654px);
+  margin-left: 12px;
+  padding: 6px 0;
+  background: @event-header-center-bg;
+  .eventItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    &:nth-child(1) {
+      span {
+        color: @event-header-item-color-1;
+      }
+    }
+    &:nth-child(2) {
+      span {
+        color: @event-header-item-color-2;
+      }
+    }
+    > div {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 66px;
+      > span {
+        position: absolute;
+        font-size: 24px;
+        letter-spacing: 0.55px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    > p {
+      margin-top: 12px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.hRight {
+  display: flex;
+  width: 38%;
+  margin-right: 12px;
+  padding: 0 12px;
+  background: @event-header-center-bg;
+  border-left: 1px solid @event-bar-border;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    & > p {
+      margin-top: 12px;
+      margin-bottom: 0;
+    }
+  }
+}

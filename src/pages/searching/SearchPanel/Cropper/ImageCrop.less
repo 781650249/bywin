@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.tools {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: max-content;
+  margin: auto;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.5;
+  background: hsl(209, 100%, 55%);
+  border-radius: 8px;
+}
+.tool {
+  display: inline-block;
+  padding: 0 8px;
+  cursor: pointer;
+  &.active,
+  &:hover {
+    background-color: hsl(209, 100%, 45%);
+  }
+}

@@ -1,0 +1,25 @@
+@import '~@/styles/theme.less';
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.info {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  height: 140px;
+  padding: 14px 0;
+  overflow: hidden;
+  background-color: @event-header-bg;
+}
+.container {
+  flex: auto;
+  flex-shrink: 0;
+  height: calc(100% - 164px);
+  margin: 12px;
+  padding: 12px 16px;
+  background-color: @event-content-bg;
+}

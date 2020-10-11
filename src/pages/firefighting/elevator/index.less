@@ -1,0 +1,114 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  height: 100%;
+  padding: 0 12px;
+  overflow: hidden;
+  .container {
+    display: flex;
+    flex: auto;
+    padding: 12px 0;
+    background: @elevator-bg;
+    .leftBar {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      padding: 0 20px;
+      .treeWrapper {
+        flex: auto;
+        width: 16.6666667vw;
+        min-width: 240px;
+        max-width: 320px;
+        margin-top: 8px;
+        padding: 16px;
+        background: @elevator-menu-bg;
+        border: 2px solid @elevator-menu-border;
+        :global {
+          .ant-tree {
+            background-color: transparent;
+          }
+          .site-tree-search-value {
+            color: @error-color;
+          }
+        }
+      }
+    }
+    .rightBar {
+      flex: auto;
+      padding-top: 40px;
+      padding-right: 20px;
+      :global {
+        .ant-spin-nested-loading {
+          height: 100%;
+        }
+        .ant-spin-blur {
+          height: 100%;
+        }
+        .ant-spin-container {
+          height: 100%;
+        }
+      }
+      .navWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 32px;
+        .navBtn {
+          display: flex;
+          justify-content: flex-start;
+          color: @elevator-white;
+          font-size: 14px;
+          line-height: 32px;
+          &Item {
+            width: 120px;
+            margin-left: -18px;
+            text-align: center;
+            background: url(@/assets/btnBg/sort-center-bg.png) no-repeat;
+            background-size: 100% 100%;
+            cursor: pointer;
+            opacity: 0.65;
+            transition: opacity .3s;
+            &.active,
+            &:hover {
+              opacity: 1;
+            }
+          }
+          &>:first-child {
+            width: 112px;
+            margin-left: 0;
+            background-image: url(@/assets/btnBg/sort-first-bg.png);
+          }
+          &>:last-child {
+            width: 112px;
+            background-image: url(@/assets/btnBg/sort-last-bg.png);
+          }
+          &Checked {
+            opacity: 1;
+          }
+        }
+        .recordBtn {
+          width: 80px;
+          height: 24px;
+          color: @elevator-white;
+          line-height: 24px;
+          text-align: center;
+          border: 1px solid fade(@elevator-white, 45);
+          border-radius: 12px;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.85;
+          }
+        }
+      }
+      .rightContent {
+        display: flex;
+        flex: auto;
+        flex-direction: column;
+        height: calc(100% - 32px);
+        padding: 16px 0;
+      }
+    }
+  }
+}

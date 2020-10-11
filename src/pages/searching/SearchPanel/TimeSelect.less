@@ -1,0 +1,30 @@
+.wrap {
+  display: flex;
+  :global {
+
+    .ant-calendar-picker {
+      .ant-calendar-picker-icon {
+        display: none;
+      }
+      input {
+        height: 28px;
+        padding: 0;
+        color: inherit;
+        font-size: 14px;
+        line-height: 28px;
+        text-align: center;
+        background-color: transparent;
+        border-color: transparent;
+      }
+    }
+    .ant-calendar-picker:hover .ant-calendar-picker-input:not(.ant-input-disabled) {
+      border-color: transparent;
+    }
+  }
+
+}
+
+.dropdown {
+  top: 57px !important;
+  left: 276px !important;
+}

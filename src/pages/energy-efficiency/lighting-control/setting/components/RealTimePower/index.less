@@ -1,0 +1,39 @@
+.container {
+  position: relative;
+  display: inline-block;
+  width: 108px;
+  height: 104px;
+  background: url(./images/dashboard.png) no-repeat;
+}
+
+.pointer {
+  position: absolute;
+  bottom: calc(50% - 4px);
+  left: calc(50% - 4px);
+  width: 8px;
+  height: 30px;
+  background: url(./images/pointer.svg) no-repeat;
+  transform-origin: 4px 26px;
+}
+.value {
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+  left: 0;
+  font-size: 18px;
+  text-align: center;
+  span {
+    padding-left: 2px;
+    font-size: 12px;
+    vertical-align: top;
+  }
+}
+.runTime {
+  position: absolute;
+  right:0;
+  bottom: calc(5% + 20px);
+  left: 0;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.65;
+}

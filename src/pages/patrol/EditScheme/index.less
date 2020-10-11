@@ -1,0 +1,75 @@
+@import '~@/styles/theme.less';
+
+.patrolLeftColumn {
+  position: absolute;
+  left: 32px;
+  z-index: 22;
+  overflow: hidden;
+  transition: width .15s;
+  .patrolScheme {
+    height: 360px;
+    margin-bottom: 16px;
+    padding: 16px 15px 10px 18px;
+    background: url(@/assets/patrol/patrol-dark-bg.png);
+    background-size: 100% 100%;
+    .topTitleRow {
+      display: flex;
+      align-items: center;
+      height: 32px;
+      margin-bottom: 18px;
+      .toptitle {
+        width: 146px;
+        height: 32px;
+        color: @patrol-deep-font;
+        font-size: 18px;
+        line-height: 32px;
+        text-align: center;
+        background: url(@/assets/patrol/patrol-title-bg.png);
+        background-size: 100% 100%;
+      }
+    }
+    .topContent {
+      height: calc(100% - 48px);
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      &Col {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 24px;
+        margin-bottom: 12px;
+        :nth-child(1) {
+          flex-shrink: 0;
+          margin-right: 8px;
+        }
+        :nth-child(2) {
+          flex: auto;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          cursor: pointer;
+          &:hover {
+            color: @patrol-deep-font;
+          }
+        }
+        :nth-child(3) {
+          width: 0;
+          overflow: hidden;
+          text-align: right;
+        }
+        &:hover {
+          :nth-child(3) {
+            width: 60px;
+            color: @patrol-deep-font;
+          }
+        }
+      }
+    }
+  }
+}
+
+.checkedFont {
+  color: @patrol-deep-font;
+}

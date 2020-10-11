@@ -1,0 +1,126 @@
+@import '~@/styles/theme.less';
+
+.action {
+  height: 32px;
+  margin-bottom: 16px;
+  text-align: right;
+}
+.map {
+  z-index: 0;
+  height: calc(100% - 152px);
+}
+.footer {
+  height: 144px;
+  padding-top: 30px;
+  .title {
+    margin-bottom: 4px;
+    padding-left: 24px;
+    color: @text-color-light;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  :global {
+    .ant-popover-placement-top, .ant-popover-placement-topLeft, .ant-popover-placement-topRight {
+      left: 180px !important;
+      width: calc(100vw - 352px);
+      height: 120px;
+    }
+    .ant-popover-inner-content {
+      padding: 0;
+    }
+    .ant-popover-placement-top > .ant-popover-content > .ant-popover-arrow {
+      display: none;
+    }
+    .ant-popover {
+      z-index: 998;
+    }
+  }
+}
+.slick {
+  position: relative;
+  height: 104px;
+  overflow: hidden;
+  &Prev,
+  &Next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 40px;
+  }
+  &Prev {
+    left: 24px;
+  }
+  &Next {
+    right: 24px;
+  }
+  &List {
+    width: calc(100% - 96px);
+    margin: 0 48px;
+    padding: 6px;
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+  &Track {
+    // display: flex;
+    // flex-wrap: nowrap;
+    height: 92px;
+    white-space: nowrap;
+  }
+  &Slide {
+    position: relative;
+    display: inline-block;
+    width: 256px;
+    height: 92px;
+    margin-right: 16px;
+    padding: 16px;
+    overflow: hidden;
+    background-color: @profile-slide-bg;
+    box-shadow: 0 2px 16px 0 @profile-shadow-color;
+    cursor: pointer;
+  }
+}
+.avatar {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.circle {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 60px;
+  height: 60px;
+  color: @white;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50%;
+  &Green {
+    background-color: #38AB50;
+  }
+  &Blue {
+    background-color: #347DFF;
+
+  }
+  &Red {
+    background-color: #EF6262;
+  }
+  &Cyan {
+    background-color: #0ff;
+  }
+  &Purple {
+    background-color: #6A72F3;
+  }
+}
+.content {
+  margin-left: 76px;
+  font-size: 12px;
+  line-height: 20px;
+  p {
+    margin-bottom: .1em;
+  }
+}

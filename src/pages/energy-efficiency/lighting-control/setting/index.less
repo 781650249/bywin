@@ -1,0 +1,84 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  min-width: 1296px;
+  height: 100%;
+  padding: 16px;
+  background-color: @acc-bg;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48px;
+  color: @text-color;
+  font-size: 20px;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.menus {
+  flex-shrink: 0;
+  width: 240px;
+  min-width: 240px;
+  max-width: 320px;
+  padding: 16px;
+  background-color: @acc-menu-bg;
+  border: @acc-menu-border;
+}
+
+.tree {
+  height: 100%;
+  overflow: auto;
+
+  :global {
+    .ant-tree {
+      background-color: transparent;
+    }
+
+    .site-tree-search-value {
+      color: @error-color;
+    }
+
+    .ant-tree .ant-tree-treenode {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.content {
+  flex: auto;
+  height: 100%;
+  padding-left: 16px;
+  overflow: auto;
+  // overflow: overlay;
+}
+
+.subtitleNumber {
+  padding: 0 4px;
+  color: @acc-base-color;
+  font-style: normal;
+}
+
+.control {
+  display: flex;
+}
+
+.independentControl {
+  flex: 1;
+  min-width: 320px;
+  max-width: 420px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+
+  &Wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

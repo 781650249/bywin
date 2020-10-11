@@ -1,0 +1,532 @@
+
+
+.content {
+  position: relative;
+  flex: auto;
+  margin: 5vh 1.979167vw;
+  // overflow: hidden;
+  background: url(@/assets/home/content/bg.png) no-repeat;
+  background-size: 100% 100%;
+  :global {
+    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      color: fade(#fff, 85);
+      background-color: rgba(0, 0, 0, .65);
+      border-color: #347DFF;
+    }
+    .ant-select-arrow {
+      color: fade(#fff, 85);
+    }
+    .ant-select-dropdown {
+      color: fade(#fff, 65);
+      background-color: rgba(0, 0, 0, .65);
+    }
+    .ant-select-item {
+      color: fade(#fff, 65);
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+      background-color: rgba(255, 255, 255, .1);
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: '';
+  }
+  &Active {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    opacity: 0;
+    pointer-events: none;
+  }
+  &:hover &Active {
+    animation: activeFade 1s infinite alternate;
+  }
+  @keyframes activeFade {
+    0% {
+      opacity: 0.4;
+    }
+    20% {
+      opacity: 0.8;
+    }
+    40% {
+      opacity: 0.4;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+  &Title {
+    position: absolute;
+    z-index: 1;
+    width: 6em;
+    color: #66eaf8;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &.usable &Title {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.20833vw;
+    min-width: 6em;
+    height: 1.71875vw;
+    min-height: 2em;
+    // height: 6.035283%;
+    color: #fff;
+    background-image: url(@/assets/home/content/menu-title-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  &.usable.disabled &Title {
+    background-image: url(@/assets/home/content/menu-title-disabled-bg.png);
+  }
+
+  &Icon {
+    position: absolute;
+    top: 0;
+    // width:
+    width: 2.5vw;
+    height: 2.5vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-box-reflect: below -10px linear-gradient(transparent, transparent 20%, rgba(0, 0, 0, 0.5));
+  }
+}
+
+.main {
+  top: 31%;
+  left: 39%;
+  z-index: 0;
+  width: 28.316327%;
+  height: 39.832869%;
+  background-image: url(@/assets/home/content/title-bg.png);
+  &::before {
+    background-image: url(@/assets/home/content/title-border-bg.png);
+    animation: titleFade 2s infinite alternate;
+  }
+  @keyframes titleFade {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    60% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.videoArchives {
+  top: 44%;
+  left: 0;
+  width: 19.612837%;
+  height: 37.047354%;
+  background-image: url(@/assets/home/content/video-archives-bg.png);
+  .menuActive {
+    bottom: 23%;
+    left: 37%;
+    width: 68.051948%;
+    background-image: url(@/assets/home/content/video-archives-active.png);
+    background-position: center bottom;
+  }
+  .menuTitle {
+    right: 0;
+    transform: translate(0, -100%);
+  }
+  .menuIcon {
+    top: 12%;
+    right: 20%;
+    background-image: url(@/assets/home/content/video-archives-icon.png);
+  }
+}
+.discover {
+  top: 36%;
+  left: 27%;
+  width: 10.459184%;
+  height: 14.856082%;
+  background-image: url(@/assets/home/content/discover-bg.png);
+  .menuActive {
+    bottom: 0;
+    left: 0.5%;
+    width: 99%;
+    height: 111.25%;
+    background-image: url(@/assets/home/content/discover-active.png);
+    background-position: center bottom;
+  }
+  .menuTitle {
+    right: 0;
+    transform: translate(0, -120%);
+  }
+  .menuIcon {
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-image: url(@/assets/home/content/discover-icon.png);
+  }
+}
+
+.communityManage {
+  top: 4%;
+  left: 27%;
+  width: 10.408163%;
+  height: 18.10585%;
+  background-image: url(@/assets/home/content/community-manage-bg.png);
+  .menuActive {
+    left: 50%;
+    width: 117.156863%;
+    background-image: url(@/assets/home/content/community-manage-active.png);
+    background-position: center bottom;
+    transform: translate(-50%, 0);
+  }
+  .menuTitle {
+    transform: translate(80%, -100%);
+  }
+  .menuIcon {
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-image: url(@/assets/home/content/community-manage-icon.png);
+  }
+}
+.smartSearch {
+  top: 18.5%;
+  left: 41%;
+  width: 10.408163%;
+  height: 18.10585%;
+  background-image: url(@/assets/home/content/smart-search-bg.png);
+  .menuActive {
+    left: 50%;
+    width: 117.156863%;
+    background-image: url(@/assets/home/content/smart-search-active.png);
+    background-position: center bottom;
+    transform: translate(-50%, 0);
+  }
+  .menuTitle {
+    transform: translate(0, -150%);
+  }
+  .menuIcon {
+    top: 12%;
+    right: 10%;
+    left: 0;
+    margin: -20% auto 0;
+    background-image: url(@/assets/home/content/smart-search-icon.png);
+  }
+}
+.personManage {
+  top: 2.7%;
+  left: 51%;
+  width: 18.469388%;
+  height: 28.040854%;
+  background-image: url(@/assets/home/content/person-manage-bg.png);
+  .menuActive {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 116.887%;
+    background-image: url(@/assets/home/content/person-manage-active.png);
+    background-position: center bottom;
+  }
+  .menuTitle {
+    right: 20%;
+    transform: translate(0, -20%);
+  }
+  .menuIcon {
+    right: 0;
+    bottom: 20%;
+    left: 10%;
+    margin: auto;
+    background-image: url(@/assets/home/content/person-manage-icon.png);
+  }
+}
+.searching {
+  top: 52%;
+  left: 68%;
+  width: 13.010204%;
+  height: 19.870009%;
+  background-image: url(@/assets/home/content/searching-bg.png);
+  .menuActive {
+    bottom: 6%;
+    left: 52%;
+    width: 56.470588%;
+    background-image: url(@/assets/home/content/searching-active.png);
+    background-position: center bottom;
+  }
+  .menuTitle {
+    left: 50%;
+    transform: translate(0, -100%);
+  }
+  .menuIcon {
+    right: 0;
+    bottom: 20%;
+    left: 55%;
+    margin: auto;
+    background-image: url(@/assets/home/content/searching-icon.png);
+  }
+}
+.eventHubs {
+  top: 78%;
+  left: 58%;
+  width: 14.285714%;
+  height: 18.662953%;
+  background-image: url(@/assets/home/content/event-hubs-bg.png);
+  .menuActive {
+    bottom: 3%;
+    left: 22%;
+    width: 56.785714%;
+    background-image: url(@/assets/home/content/event-hubs-active.png);
+    background-position: center bottom;
+  }
+  .menuTitle {
+    left: 50%;
+    transform: translate(-50%, -200%);
+  }
+  .menuIcon {
+    right: 0;
+    bottom: 80%;
+    left: 0%;
+    margin: auto;
+    background-image: url(@/assets/home/content/event-hubs-icon.png);
+  }
+}
+
+.housingManage {
+  top: 4%;
+  left: 72%;
+  width: 8.673469%;
+  height: 20.427112%;
+  background-image: url(@/assets/home/content/housing-manage-bg.png);
+  .menuTitle {
+    left: 50%;
+    transform: translate(-50%, -120%);
+  }
+}
+
+.vehicleManage {
+  top: 72%;
+  left: 38%;
+  width: 15.408163%;
+  height: 26.369545%;
+  background-image: url(@/assets/home/content/vehicle-manage-bg.png);
+  .menuTitle {
+    right: 10%;
+    bottom: 0;
+    // transform: translate(-50%, -120%);
+  }
+  .carIcon {
+    position: absolute;
+    width: 1.901042vw;
+    height: 1.901042vw;
+    background-image: url(@/assets/home/content/vehicle-manage-car.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    &Center {
+      top: 21%;
+      left: 38%;
+      animation: carFade 2s infinite;
+    }
+    &Left {
+      top: 61%;
+      left: 3%;
+      transform: scale(0.7);
+      animation: carFade 2s 0.5s infinite;
+    }
+    &Right {
+      top: -7%;
+      left: 74%;
+      transform: scale(0.7);
+      animation: carFade 2s 1s infinite;
+    }
+
+    @keyframes carFade {
+      0% {
+        opacity: 1;
+      }
+      15% {
+        opacity: 0.5;
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.populationManage {
+  top: 74%;
+  left: 12%;
+  width: 17.091837%;
+  height: 22.376973%;
+  background-image: url(@/assets/home/content/population-manage-bg.png);
+  .menuTitle {
+    left: 50%;
+    transform: translate(-50%, -20%);
+  }
+}
+
+.equipmentCenter {
+  top: 4%;
+  left: 83%;
+  width: 12.959184%;
+  height: 28.876509%;
+  background-image: url(@/assets/home/content/equipment-center-bg.png);
+  .menuTitle {
+    left: 50%;
+    transform: translate(-50%, -120%);
+  }
+}
+
+.person {
+  position: absolute;
+  width: 0.663265%;
+  height: 3.528319%;
+  background-image: url(@/assets/home/content/move-person.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  &Left {
+    top: 86%;
+    left: 0;
+    opacity: 0;
+    // animation: personLeftMove 16s linear infinite;
+    &:nth-child(1) {
+      animation: personLeftMove 16s linear infinite;
+    }
+    &:nth-child(2) {
+      animation: personLeftMove 16s 3s linear infinite;
+    }
+    &:nth-child(3) {
+      animation: personLeftMove 16s 6s linear infinite;
+    }
+    &:nth-child(4) {
+      animation: personLeftMove 16s 9s linear infinite;
+    }
+  }
+  &Right {
+    top: 0%;
+    right: 1%;
+    opacity: 0;
+    &:nth-child(1) {
+      animation: personRightMove 9s linear infinite;
+    }
+    &:nth-child(2) {
+      animation: personRightMove 9s 3s linear infinite;
+    }
+    &:nth-child(3) {
+      animation: personRightMove 9s 6s linear infinite;
+    }
+  }
+}
+
+@keyframes personLeftMove {
+  0% {
+    top: 86%;
+    left: 0;
+    opacity: 1;
+  }
+  25% {
+    top: 65%;
+    left: 24.2%;
+  }
+  45% {
+    top: 35%;
+    left: 18%;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: -1%;
+    left: 65%;
+    opacity: 0;
+  }
+}
+
+@keyframes personRightMove {
+  0% {
+    top: 0%;
+    right: 1%;
+    opacity: 1;
+  }
+  30% {
+    top: 35%;
+    right: 1%;
+  }
+  80% {
+    top: 73%;
+    right: 20%;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 94%;
+    right: 20%;
+    opacity: 0;
+  }
+}
+
+.car {
+  position: absolute;
+  bottom: 1%;
+  left: 20%;
+  width: 1.833928%;
+  height: 2.599814%;
+  background-image: url(@/assets/home/content/move-car.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: carMove 3s linear infinite;
+}
+
+@keyframes carMove {
+  0% {
+    bottom: 1%;
+    left: 20%;
+    transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    bottom: 19%;
+    left: 42%;
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

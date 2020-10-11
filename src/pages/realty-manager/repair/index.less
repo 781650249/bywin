@@ -1,0 +1,222 @@
+@import '~@/styles/theme.less';
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  // background-color: @car-bg;
+
+  .title {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 50px;
+    letter-spacing: 0.48px;
+    text-align: left;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .left {
+      width: 100%;
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 32px;
+      .add {
+        width: 24px;
+        height: 24px;
+        background-image: url(../notice/images/add.png);
+        background-size: 100% 100%;
+        border-radius: 50%;
+
+        &:hover {
+          background-color: @primary-color;
+        }
+      }
+    }
+  }
+  .spin {
+    flex: auto;
+    height: calc(100% - 36px - 48px - 48px);
+    :global(.ant-spin-container) {
+      height: 100%;
+    }
+  }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    margin-right: -10px;
+    overflow: auto;
+    overflow: overlay;
+  }
+
+  .card {
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    min-height: 134px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 28px 32px;
+    background-color: @personnel-card-bg;
+    transition: background-color 0.3s;
+    &Top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      font-weight: 600;
+      .back {
+        color: #66eaf8;
+        opacity: 0;
+      }
+    }
+    &:hover {
+      background-color: fade(@primary-color, 30);
+      .back {
+        opacity: 1;
+      }
+    }
+    .con {
+      flex-wrap: wrap;
+      max-height: 60px;
+      margin-bottom: 10px;
+      text-overflow: ellipsis;
+    }
+    .info {
+      flex: auto;
+      &Name {
+        display: flex;
+        margin-bottom: 8px;
+      }
+      &Item {
+        display: flex;
+        margin-bottom: 8px;
+        line-height: 20px;
+        &Icon {
+          width: 20px;
+        }
+        &Text {
+          flex: auto;
+        }
+      }
+    }
+
+    .handleSet {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 58px;
+      height: 20px;
+    }
+    .handleing {
+      background-image: url('./Images/handleing.png');
+      background-size: 100% 100%;
+    }
+    .handled {
+      background-image: url('./Images/hashandled.png');
+      background-size: 100% 100%;
+    }
+    .nohandle {
+      background-image: url('./Images/nohandle.png');
+      background-size: 100% 100%;
+    }
+    .handleFail {
+      background-image: url('./Images/handleFail.png');
+      background-size: 100% 100%;
+    }
+  }
+
+  .pagination {
+    height: 32px;
+    margin-top: 6px;
+    text-align: right;
+  }
+}
+
+.drawWrap {
+  color: #fff;
+  :global {
+    .ant-drawer-content-wrapper {
+      width: 480px !important;
+    }
+    .ant-form {
+      position: relative;
+    }
+    .ant-table-thead {
+      color: #7c8dac;
+      background-color: #212f47;
+    }
+  }
+  .footer {
+    position: absolute;
+    right: 20px;
+    bottom: -100px;
+  }
+  .wrap {
+    // padding: 20px;
+    .title {
+      text-align: center;
+      opacity: 0.85;
+    }
+
+    .row {
+      display: flex;
+      width: 100%;
+      height: 30px;
+      line-height: 13px;
+      opacity: 0.85;
+      &Label {
+        width: 80px;
+        margin-top: 1px;
+        text-align: justify;
+        i {
+          padding-left: 27px;
+        }
+      }
+      &Title {
+        position: relative;
+        display: flex;
+        margin-left: 10px;
+        .ballStatus {
+          width: 5px;
+          height: 5px;
+          margin-top: 4px;
+          margin-right: 10px;
+          line-height: 22px;
+          border-radius: 50%;
+        }
+        .handleing {
+          background-color: #4751f1;
+        }
+        .handled {
+          background-color: rgb(15, 236, 15);
+          opacity: 0.25;
+        }
+        .nohandle {
+          background-color: #fe4f28;
+        }
+        .handleFail {
+          background-color: #fff;
+        }
+      }
+    }
+
+    .checkSearch {
+      display: none;
+      height: 20px;
+    }
+  }
+}
+
+.hiddenBox {
+  opacity: 0;
+}

@@ -1,0 +1,198 @@
+@import '~@/styles/theme.less';
+
+.wrap {
+  position: relative;
+  display: flex;
+  height: 100%;
+  padding: 16px;
+  transition: display 1s;
+
+  .querySearch {
+    display: flex;
+    height: 32px;
+    .form {
+      :global {
+        .ant-select-selection-placeholder {
+          color: fade(@text-color, 100);
+        }
+        .ant-input,
+        .ant-picker,
+        .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+          background-color: @personnel-input-bg;
+          border-color: transparent;
+        }
+        .ant-select-item-option-active:not(.ant-select-item-option-disabled),
+        .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+          background-color: @personnel-input-bg;
+        }
+      }
+    }
+  }
+
+  .setting {
+    position: absolute;
+    right: 30px;
+    width: 24px;
+    height: 24px;
+    background-image: url('../carInfo/images/setting.png');
+    background-size: 100% 100%;
+    cursor: pointer;
+  }
+
+  .title {
+    font-size: 16px;
+    color: #ffffff;
+    letter-spacing: 0.48px;
+    text-align: left;
+    line-height: 50px;
+  }
+  .spin {
+    flex: auto;
+    height: calc(100% - 36px - 48px - 60px);
+    margin-top: 20px;
+    :global(.ant-spin-container) {
+      height: 100%;
+    }
+  }
+
+  .list {
+    margin-top: 20px;
+    padding: 5px;
+    display: flex;
+    flex: auto;
+    flex-wrap: wrap;
+    overflow: auto;
+    height: calc(100% - 147px);
+    align-content: flex-start;
+    align-items: flex-start;
+
+    :global {
+      .ant-card-bordered {
+        border: none;
+      }
+
+      .ant-card-body {
+        padding: 0px;
+      }
+    }
+
+    .cardWrap {
+      flex: 1;
+      max-width: 400px;
+      min-width: 300px;
+      // width: 300px;
+      height: 165px;
+      padding: 15px;
+      display: flex;
+      font-size: 14px;
+      color: #ffffff;
+      line-height: 20px;
+      position: relative;
+      background-color: @car-card-bg;
+      transition: background-color 0.3s;
+      margin: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: fade(@primary-color, 30);
+        cursor: pointer;
+
+        .del {
+          opacity: 1;
+        }
+      }
+
+      .right {
+        height: 100%;
+        width: 200px;
+        margin-left: 20px;
+
+        &CarNum {
+          width: 100%;
+          height: 30px;
+          position: relative;
+        }
+
+        &Item {
+          display: flex;
+          margin-bottom: 8px;
+          line-height: 20px;
+
+          &Icon {
+            width: 20px;
+          }
+
+          &Txt {
+            flex: auto;
+
+            .warnRed {
+              color: red;
+            }
+          }
+        }
+      }
+
+      .del {
+        background-image: url('../carInfo/images/video.png');
+        background-size: 100% 100%;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 14px;
+        height: 14px;
+        opacity: 0;
+      }
+    }
+
+    .hiddenCard {
+      flex: 1;
+      flex-shrink: 0;
+      min-width: 300px;
+      height: 0;
+      margin: 5px;
+      padding: 15px;
+      visibility: hidden;
+    }
+  }
+
+  .cardWrap:hover {
+    background-color: rgb(21, 31, 87);
+  }
+
+  .pagination {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+  }
+
+  .modalVideo {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+.drawWrap {
+  color: #ffffff;
+  .con {
+    margin-top: 20px;
+  }
+  .conTop {
+    margin-top: 10px;
+  }
+  .cam {
+    position: absolute;
+    top: 439px;
+    right: 36px;
+    width: 14px;
+    height: 14px;
+    background-image: url('../carInfo/images/video.png');
+    background-size: 100% 100%;
+    cursor: pointer;
+  }
+
+  :global {
+    .ant-drawer-content-wrapper {
+      width: 720px !important;
+    }
+  }
+}

@@ -1,0 +1,159 @@
+@import '~@/styles/theme.less';
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  margin-left: 256px;
+}
+
+.container {
+  position: relative;
+  z-index: 9;
+  height: 220px;
+  overflow: hidden;
+  background: @seaerch-body-bg;
+  transition: height 0.35s linear;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 8px;
+  padding: 0 20px;
+  line-height: 32px;
+  box-shadow: rgb(204, 204, 204) 0 1px 0;
+
+}
+.extra {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 12px;
+  .ascend {
+    transform: rotate(90deg);
+  }
+  .descend {
+    transform: rotate(-90deg);
+  }
+  .ascend,
+  .descend {
+    color: rgba(0, 0, 0, 0.65);
+  }
+  .active {
+    color: inherit;
+  }
+  & > span {
+    cursor: pointer;
+  }
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: start;
+  height: calc(100% - 8px - 32px);
+  margin-top: 8px;
+  padding: 8px 12px 0 12px;
+  overflow-x: auto;
+  overflow-y: scroll;
+  opacity: 0;
+  transition: opacity 0.35s ease-in;
+  pointer-events: none;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: lighten(@seaerch-body-bg, 16%);
+    border-radius: 8px;
+    transition: all 0.15s;
+  }
+  &::-webkit-scrollbar-thumb:window-inactive {
+    background-color: lighten(@seaerch-body-bg, 8%);
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: lighten(@seaerch-body-bg, 8%);
+    border-radius: 5px;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+}
+
+// 展开的折叠
+.hideBtn,
+.openBtn {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 40px;
+  height: 16px;
+  margin: 0 auto;
+  color: #fff;
+  line-height: 16px;
+  text-align: center;
+  background-color: #1890ff;
+  cursor: pointer;
+  &::after {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    display: block;
+    width: 200%;
+    height: 200%;
+    content: '';
+  }
+  i {
+    transition: transform 0.2s 0.35s;
+  }
+}
+.hideBtn {
+  top: -16px;
+  border-radius: 4px 4px 0 0;
+}
+.openBtn {
+  bottom: -16px;
+  border-radius: 0 0 4px 4px;
+}
+
+// 展开的隐藏
+.open {
+  &.container {
+    height: calc(100vh - 40px - 16px - 78px);
+  }
+  & ~ .openBtn i {
+    transform: rotate(180deg);
+  }
+  .content {
+    opacity: 1;
+    transition: opacity 0.35s ease-out;
+    pointer-events: auto;
+  }
+}
+
+.hide {
+  &.container {
+    height: 0;
+  }
+  & ~ .hideBtn {
+    border-radius: 0 0 4px 4px;
+    i {
+      transform: rotate(180deg);
+    }
+  }
+  & ~ .openBtn {
+    display: none;
+  }
+}
+
+// @keyframes contentHide {
+//   0% {}
+// }

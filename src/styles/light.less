@@ -1,0 +1,158 @@
+@default-color: #a7b7cc;
+@primary-color: #4751f1;
+@proces-color: #34d6ff;
+@error-color: #f5222d;
+@warning-color: #faad14;
+@success-color: #52c41a;
+
+@content-color: #f2f5fa;
+
+@white: #fff;
+@black: #000;
+
+@normal-color: #f2f5fa;
+
+// 文字颜色
+@text-color: fade(@black, 65);
+@text-color-light: fade(@black, 85);
+@text-color-inverse: fade(@white, 65);
+@text-color-light-inverse: fade(@white, 85);
+@link-color: @proces-color;
+
+@input-bg: fade(@normal-color, 85);
+@input-icon-bg: @default-color;
+
+// 组件
+// card
+@card-bg: @white;
+@card-shadow: 0 2px 16px 0 fade(@black, 8);
+@card-border-avatar: @default-color;
+@card-text-color: @black;
+
+// viewer
+@viewer-bg: fade(@black, 65);
+@viewer-btn-bg: fade(@black, 65);
+@viewer-btn-color: @white;
+
+
+// tag
+@tag-color: @white;
+@tag-default-color: @text-color;
+@tab-border-default-color: @default-color;
+@tag-default: @white;
+@tag-primary: @primary-color;
+@tag-error: @error-color;
+@tag-warning: @warning-color;
+@tag-success: @success-color;
+
+
+// Layout 外层
+@layout-body-bg: @normal-color;
+@layout-logo-bg: @primary-color;
+@layout-sider-bg: #172637;
+@layout-sider-color: @white;
+@layout-content-bg: @normal-color;
+@layout-content-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+
+// 页面
+// search 街面巡防
+@search-text-color: fade(#000, 65);
+@search-lighten-bg: @normal-color;
+@seaerch-header-bg: @white;
+@seaerch-body-bg: @white;
+@seaerch-image-bg: fade(#07132b, 85%);
+@search-viewer-bg: @white;
+@search-viewer-btn-bg: #ccc;
+@search-viewer-btn-color: fade(@black, 65);
+@search-viewer-btn-hover-color: @black;
+@search-viewer-toolbar-bg: fade(@black, 20);
+@search-track-detail-header-color: @white;
+@search-track-detail-color: @text-color;
+@search-track-detail-close-bg: rgba(0, 0, 0, .05);
+
+// video-archives 视频档案
+@video-archive-bg: @white;
+@video-archive-text-color: fade(#000, 65);
+@video-archive-header-bg: @white;
+@video-archive-content-bg: @white;
+@video-archive-divider-color: #a7b7cc;
+@video-archive-modal-bg: @normal-color;
+
+// event 事件中心
+@event-header-bg: @white;
+@event-header-center-bg: @white;
+@event-header-item-color-1: #1149AC;
+@event-header-item-color-2: #117626;
+@event-img-border: @default-color;
+@event-black-color: @black;
+@event-content-bg: @white;
+@event-bar-border: fade(@default-color, 60);
+@event-bar-badge-bg: @default-color;
+@event-noborder-color: @primary-color;
+@event-fill-icon-color: @default-color;
+@event-fill-icon-bg: @default-color;
+@event-card-bg: @white;
+@event-card-border: rgba(151,151,151,0.08);
+@event-card-box-shadow: rgba(0,0,0,0.08);
+@event-text-hover: fade(@black, 70);
+
+// person-manage 动向管控
+@person-manage-wrapper-bg: @white;
+@person-manage-bg: @white;
+@person-manage-divider-color: fade(@default-color, 35);
+@person-manage-color: fade(@black, 75);
+@person-manage-active-color: @black;
+@person-manage-form-title: @black;
+
+
+// profile 一人一档
+@profile-bg: @white;
+@profile-header-bg: @white;
+@profile-body-bg: @white;
+@profile-shadow-color: fade(@black, 8);
+@profile-slide-bg: @white;
+@profile-border-color: @default-color;
+
+// vehicle-file 一车一档
+@vehicle-file-bg: @white;
+@vehicle-file-header-bg: @white;
+@vehicle-file-body-bg: @white;
+@vehicle-file-shadow-color: fade(@black, 8);
+@vehicle-file-slide-bg: @white;
+@vehicle-file-border-color: @default-color;
+
+// 社区画像
+@community-collapse-bg: linear-gradient(180deg, transparent, #eaecf2 100%);
+@community-slide-box-shadow: fade(@black, 8);
+@community-slide-card-bg: @white;
+
+@community-bg: @white;
+@community-bar-border: fade(@default-color, 60);
+@community-search-bg: @white;
+@community-search-border: #D7D8D9;
+@community-search-icon-color: fade(@black, 65);
+@community-tab-color: #333;
+@community-tab-checked-bg: #F2F4F9;
+@community-switch-icon-color: #6A6C76;
+@community-switch-icon-bg: #DCDFEF;
+@community-switch-icon-border: transparent;
+@community-col-bg: @white;
+@community-tab-border: #f0f0f0;
+@community-row-border: #F5F6F8;
+@community-font-black: fade(@black, 95);
+@community-descriptions-label: fade(@black, 45);
+@community-descriptions-content: fade(@black, 85);
+
+// 组织发现
+@org-bg: @white;
+@org-whte-color: @white;
+@org-bar-border: fade(@default-color, 60);
+@org-bar-color: #3A4044;
+@org-bar-checked-color: #3A4044;
+@org-bar-badge-bg: @default-color;
+@org-slide-box-shadow: fade(@black, 12);
+@org-slide-card-bg: @white;
+@org-slide-card-border: rgba(151,151,151,0.08);
+@org-slide-card-box-shadow: rgba(0,0,0,0.08);
+@org-slide-img-box-shadow: fade(@default-color, 80);
+@org-record-img-box-shadow: rgb(197, 219, 240);

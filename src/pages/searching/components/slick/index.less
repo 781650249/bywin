@@ -1,0 +1,47 @@
+@import '~@/styles/theme.less';
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  // background-color: transparent;
+  padding: 0 20px;
+
+}
+.prev,
+.next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: 20px;
+  height: 40px;
+  margin: auto;
+  color: @primary-color;
+  font-size: 20px;
+  line-height: 2;
+  text-align: center;
+  user-select: none;
+
+}
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.track {
+  // width: auto;
+  display: flex;
+  justify-content: flex-start;
+  min-height: 100px;
+  white-space: nowrap;
+  transition: transform 0.5s;
+  & > div {
+    flex-shrink: 0;
+  }
+}

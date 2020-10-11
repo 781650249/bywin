@@ -1,0 +1,56 @@
+@import '~@/styles/theme.less';
+
+.title {
+  margin-bottom: 24px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.tags {
+  line-height: 32px;
+  :global {
+    .f-tag {
+      position: relative;
+      padding-right: 20px;
+      text-align: center;
+      cursor: pointer;
+      .f-tag-delete {
+        position: absolute;
+        top: 0;
+        right: 4px;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 300ms;
+      }
+      &:hover .f-tag-delete {
+        opacity: 1;
+      }
+    }
+    .f-tag-primary {
+      .f-tag-delete {
+        display: none;
+      }
+    }
+    .f-tag-plus {
+      width: 22px;
+      padding: 0;
+      color: @primary-color;
+      font-size: 10px;
+      border-color: fade(@primary-color, 35);
+      border-style: dashed;
+    }
+  }
+}
+
+.inputAfter {
+  display: inline-block;
+  line-height: 32px;
+  text-align: center;
+}
+
+.footer {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}

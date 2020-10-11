@@ -1,0 +1,73 @@
+@import '~@/styles/theme.less';
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 132px;
+  margin-bottom: 20px;
+  padding: 0 16px;
+  .pref,
+  .next {
+    font-size: 48px;
+  }
+  .imgContain {
+    position: absolute;
+    left: 48px;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 96px);
+    height: 132px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .itemCard {
+      display: flex;
+      flex-shrink: 0;
+      width: 280px;
+      height: 120px;
+      margin-right: 12px;
+      padding: 8px 10px;
+      background: @org-slide-card-bg;
+      border: 1px solid @org-slide-card-border;
+      box-shadow: 0 0 2px 0 @org-slide-card-box-shadow;
+      cursor: pointer;
+      .picture {
+        width: 100px;
+        height: 100px;
+        margin-right: 16px;
+        border: 4px solid @org-slide-img-box-shadow;
+        :global {
+          .ant-avatar-square {
+            border-radius: 1px;
+            img {
+              object-fit: unset;
+            }
+          }
+        }
+      }
+      .text {
+        width: 160px;
+        .firstRow {
+          margin-bottom: 12px;
+          font-size: 14px;
+          line-height: 18px;
+          &> span {
+            margin-right: 14px;
+          }
+          :first-child {
+            font-weight: 600;
+            font-size: 16px;
+          }
+        }
+        p {
+          height: 18px;
+        }
+      }
+    }
+  }
+}

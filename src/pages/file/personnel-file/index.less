@@ -1,0 +1,162 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: @file-bg;
+  :global {
+    .ant-page-header {
+      padding: 5px 16px;
+    }
+    .ant-anchor-ink {
+      top: 24px;
+      bottom: 24px;
+      left: 24px;
+      height: auto;
+    }
+    .ant-anchor-ink-ball {
+      margin-top: -24px;
+      background-color: @file-sidebar-anchor-ball-color;
+      border-color: @file-sidebar-anchor-ball-color;
+    }
+    .ant-anchor-link {
+      padding: 16px 0 16px 40px;
+      transition: background-color 0.5s 0.2s;
+    }
+    .ant-anchor-link-active {
+      background-color: @file-sidebar-anchor-active-bg;
+      & > .ant-anchor-link-title {
+        color: @text-color-light;
+      }
+    }
+    .ant-descriptions-view table {
+      table-layout: auto;
+    }
+  }
+}
+.pageHeader {
+  background-color: @file-page-header;
+}
+
+.body {
+  display: flex;
+  flex: auto;
+  min-width: 1142px;
+  height: calc(100% - 40px);
+  padding: 8px 0 8px 8px;
+  overflow: auto;
+  overflow: overlay;
+}
+.sidebar {
+  // flex-shrink: 0;
+  width: 220px;
+  min-width: 168px;
+  padding: 32px 0;
+  background-color: @file-sidebar-bg;
+  // border: @file-sidebar-border;
+  box-shadow: @file-sidebar-shadow;
+}
+.main {
+  flex: auto;
+  // min-width: 891px;
+  height: 100%;
+  padding-right: 8px;
+  padding-left: 16px;
+  overflow: auto;
+  // scroll-behavior: smooth;
+}
+
+// 出行/访客/事件 列表
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &Item {
+    flex-shrink: 0;
+    width: calc((100% - 32px) / 3);
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: @file-list-item-bg;
+    :global {
+      .ant-row {
+        flex-wrap: nowrap;
+      }
+      p {
+        margin-bottom: 8px;
+        line-height: 20px;
+        .anticon {
+          margin-right: 4px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &.fill {
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+}
+
+// 轨迹记录
+.trail {
+  &Wrapper {
+    position: relative;
+    height: 360px;
+  }
+  &Map {
+    position: relative;
+    z-index: 0;
+    height: 100%;
+  }
+  &Panel {
+    position: absolute;
+    top: 8px;
+    // bottom: 8px;
+    left: 8px;
+    z-index: 1;
+    width: 320px;
+    background-color: @file-card-bg;
+    border-radius: 2px;
+    box-shadow: @file-card-shadow;
+    :global {
+      .ant-collapse-content.ant-collapse-content-active {
+        max-height: 298px;
+        overflow: auto;
+        overflow: overlay;
+      }
+      .ant-timeline-item-tail {
+        border-left: 2px dotted @primary-color;
+      }
+    }
+    .dot {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      color: @white;
+      font-size: 12px;
+      line-height: 1;
+      background-color: @primary-color;
+      border: 2px solid @white;
+      border-radius: 50%;
+    }
+    &Address {
+      margin: 0;
+      color: @text-color-light;
+    }
+    &Time {
+      margin: 0;
+      color: @text-color;
+    }
+    &Head {
+      height: 48px;
+    }
+    &Body {
+      flex: auto;
+      overflow: auto;
+      overflow: overlay;
+    }
+  }
+}

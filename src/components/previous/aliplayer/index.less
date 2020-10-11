@@ -1,0 +1,81 @@
+:global(.prism-player .prism-controlbar .prism-controlbar-bg) {
+  opacity: 0.5;
+}
+
+.playerFrame {
+  position: fixed;
+  top: 34%;
+  left: 34%;
+  z-index: 1005;
+  width: 620;
+  background: #1a253d;
+  box-shadow: 0 2px 6px 0 rgba(0, 21, 41, 0.3);
+
+  :global {
+    .ant-spin-nested-loading>div>.ant-spin {
+      top: 150px !important;
+    }
+  }
+}
+
+.player_head {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 620px;
+  height: 27px;
+  padding: 0 10px 10px 10px;
+}
+
+.videoTitle {
+  position: absolute;
+  left: 8px;
+  top: 2px;
+  color: rgb(155, 158, 160);
+}
+
+.player_icon {
+  margin-top: 347px;
+}
+
+.player_online {
+  margin-right: 0;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.player_histroy {
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.history_span {
+  margin-right: 10px;
+
+  :global {
+    .ant-input {
+      color: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 0;
+    }
+
+    .ant-input:hover {
+      border-color: #1890ff !important;
+    }
+  }
+}
+
+.player_close {
+  position: absolute;
+  top: 7px;
+  margin-left: 15px;
+  color: #1890ff;
+  cursor: pointer;
+}
+
+.player_player {
+  position: absolute;
+  margin-left: 10px;
+  overflow: hidden;
+  text-align: center;
+}

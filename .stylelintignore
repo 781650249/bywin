@@ -1,0 +1,9 @@
+node_modules
+public
+*.svg
+*.md
+*.svg
+*.ejs
+*.js
+*.jsx
+*.html

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="30px" viewBox="0 0 8 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>icon_指针</title>
+    <desc>Created with Sketch.</desc>
+    <g id="空调控制" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-489.000000, -137.000000)" fill="#F0C338" fill-rule="nonzero" id="编组-21复制">
+            <g transform="translate(350.000000, -10.000000)">
+                <g id="编组-9" transform="translate(89.000000, 119.000000)">
+                    <path d="M54.2919277,28 L55.7560816,50.4050864 C57.0849105,51.0554269 58,52.4208482 58,54 C58,56.209139 56.209139,58 54,58 C51.790861,58 50,56.209139 50,54 C50,52.5166277 50.8074509,51.2218456 52.006806,50.5312007 L54.2919277,28 Z M54,51.5 C52.6192881,51.5 51.5,52.6192881 51.5,54 C51.5,55.3807119 52.6192881,56.5 54,56.5 C55.3807119,56.5 56.5,55.3807119 56.5,54 C56.5,52.6192881 55.3807119,51.5 54,51.5 Z" id="icon_指针"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

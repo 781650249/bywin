@@ -1,0 +1,66 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  // position: relative;
+  display: inline-block;
+  width: 100%;
+  min-width: 280px;
+  max-width: 360px;
+}
+
+.plus {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 12px;
+  color: @white;
+  line-height: 20px;
+  text-align: center;
+  background-color: @primary-color;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity .3s;
+  &:focus,
+  &:hover {
+    opacity: 0.85;
+  }
+}
+.items {
+  max-height: 320px;
+  overflow: auto;
+}
+.item {
+  position: relative;
+  display: flex;
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: @ap-list-item-bg;
+  &Avatar {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    margin-right: 8px;
+  }
+  &Content {
+    flex: auto;
+  }
+  &Name {
+    margin-bottom: 8px;
+    color: @text-color-light;
+    line-height: 24px;
+  }
+  &PhoneNumber {
+    line-height: 20px;
+  }
+  &Delete {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+  }
+}

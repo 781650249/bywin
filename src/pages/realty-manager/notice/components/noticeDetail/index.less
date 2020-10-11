@@ -1,0 +1,58 @@
+@import '~@/styles/theme.less';
+
+.drawWrap {
+  color: #fff;
+  :global {
+    .ant-drawer-content-wrapper {
+      width: 480px !important;
+    }
+    .ant-form {
+      position: relative;
+    }
+    .ant-table-thead {
+      color: #7c8dac;
+      background-color: #212f47;
+    }
+  }
+  .footer {
+    position: absolute;
+    right: 20px;
+    bottom: -100px;
+  }
+  .wrap {
+    // padding: 20px;
+    .title {
+      text-align: center;
+      opacity: 0.85;
+    }
+    .timeArea {
+      display: flex;
+      justify-content: space-between;
+    }
+    .con {
+      margin-top: 20px;
+      text-indent: 4em;
+    }
+    .row {
+      display: flex;
+      width: 100%;
+      height: 30px;
+      line-height: 13px;
+      opacity: 0.85;
+      &Label {
+        width: 80px;
+        margin-top: 8px;
+        text-align: justify;
+        i {
+          padding-left: 27px;
+        }
+      }
+      &Title {
+        position: relative;
+        display: flex;
+        margin-top: 8px;
+        margin-left: 10px;
+      }
+    }
+  }
+}

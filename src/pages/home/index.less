@@ -1,0 +1,190 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  color: @white;
+  background: url(@/assets/home/bg.jpg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+  :global(.title-1) {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: 4vh;
+    min-height: 40px;
+    margin-bottom: 1.2vh;
+    padding: 0.3vh 1.66666vw 0.6vh;
+    color: @white;
+    font-weight: bold;
+    font-size: calc(16px + (100vw - 1920px) * 0.014815);
+    line-height: 3.6vh;
+    letter-spacing: 0.05em;
+    background-image: url(@/assets/home/title-bg-1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    &::before {
+      position: absolute;
+      bottom: 100%;
+      left: 10%;
+      display: block;
+      width: 12%;
+      height: 3px;
+      background-color: rgba(255, 255, 255, .85);
+      box-shadow: 0 0 4px #fff;
+      transform: perspective(5px) rotateX(10deg);
+      transform-origin: bottom;
+      transform-style: preserve-3d;
+      perspective: none;
+      animation: titleBeforefade 2s infinite alternate;
+      content: '';
+    }
+    @keyframes titleBeforefade {
+      0% {
+        opacity: 1;
+      }
+      20% {
+        opacity: 0.2;
+      }
+      40% {
+        opacity: 1;
+      }
+      60% {
+        opacity: 0.2;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+  :global(.title-2) {
+    display: inline-block;
+    width: auto;
+    height: 3.2vh;
+    min-height: 3.2px;
+    margin-bottom: 1vh;
+    padding: 0 1.979166vw;
+    color: @white;
+    font-weight: bold;
+    font-size: calc(16px + (100vw - 1920px) * 0.014815);
+    line-height: 3.2vh;
+    letter-spacing: 0.05em;
+    background-image: url(@/assets/home/title-bg-2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+}
+.title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 3.59375vw;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 3.59375vw;
+  letter-spacing: 0.05em;
+  text-align: center;
+  background: url(@/assets/home/title-bg.png) no-repeat;
+  background-position: center center;
+  background-size: cover;
+  &::before {
+    position: absolute;
+    top: 16.66%;
+    right: 0;
+    bottom: 16.66%;
+    left: 0;
+    z-index: -1;
+    width: 20%;
+    margin: auto;
+    background-image: url(@/assets/home/title-active.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    animation: titleFade 1s infinite alternate;
+    content: '';
+  }
+  @keyframes titleFade {
+    0% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.main {
+  position: absolute;
+  top: 3.59375vw;
+  right: 22.604167vw;
+  bottom: calc(0.520833vw + 20vh);
+  left: 22.604167vw;
+  display: flex;
+  flex-direction: column;
+}
+.left,
+.right {
+  position: absolute;
+  top: 2.005208vw;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 22.604167vw;
+  padding: 4.5vh 0.520833vw 0 0.911458vw;
+  background: url(@/assets/home/left-and-right-wrap-bg.png) no-repeat;
+  background-size: 100% 100%;
+}
+.left {
+  left: 0;
+  transform: rotateY(180deg);
+  & > div {
+    transform: rotateY(-180deg);
+  }
+}
+.right {
+  right: 0;
+}
+.bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0.520833vw;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 55.208333vw;
+  height: 20vh;
+  margin: auto;
+  padding: 1vh;
+  background-color: rgba(216, 216, 216, 0.08);
+}
+.leftCard {
+  margin-bottom: 0.520833vw;
+  padding: 0.625vw 1.09375vw 0.625vw 0.625vw;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  &:first-child {
+    height: 50.45vh;
+    background-image: url(@/assets/home/left-1-bg.png);
+  }
+  &:last-child {
+    flex: auto;
+    background-image: url(@/assets/home/left-2-bg.png);
+  }
+}
+.rightCard {
+  height: calc((100% - (0.520833vw * 3)) / 3);
+  margin-bottom: 0.520833vw;
+  padding: 0.625vw;
+  padding-right: 1.09375vw;
+  background: url(@/assets/home/right-1-bg.png) no-repeat;
+  background-size: 100% 100%;
+}
+.bottomCard {
+  width: calc((100% - 0.520833vw) / 2);
+  padding: 0.8vh 0.625vw 0.8vh 1.041667vw;
+  background: url(@/assets/home/bottom-bg.png) no-repeat;
+  background-size: 100% 100%;
+}

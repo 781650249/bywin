@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="49px" height="49px" viewBox="0 0 49 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>编组 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="48" height="48" rx="8"></rect>
+        <path d="M58.2665926,43.4029146 C45.5999259,43.4029146 36.5999259,46.7362479 31.2665926,53.4029146 C23.2665926,63.4029146 25.2665926,78.4029146 7.26659262,76.4029146" id="path-3"></path>
+        <filter x="-13.9%" y="-21.1%" width="127.7%" height="142.2%" filterUnits="objectBoundingBox" id="filter-4">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="视频档案-车辆信息" transform="translate(-35.000000, -415.000000)">
+            <g id="top复制" transform="translate(-1.000000, 0.000000)">
+                <g id="编组-5" transform="translate(36.728586, 415.978358)">
+                    <g id="编组-17" opacity="0.16">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="蒙版" fill="#AFBED1" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)">
+                            <g transform="translate(25.785751, 18.227443) rotate(59.000000) translate(-25.785751, -18.227443) translate(-10.714249, -26.272557)">
+                                <path d="M56,27.0964809 C43.3333333,27.0964809 34.3333333,30.4298142 29,37.0964809 C21,47.0964809 23,62.0964809 5,60.0964809" id="路径-20" stroke="#FFFFFF" stroke-width="2" opacity="0.6" transform="translate(30.500000, 43.687094) rotate(-26.000000) translate(-30.500000, -43.687094) "></path>
+                                <g id="路径-20复制-2" stroke="none" transform="translate(32.766593, 59.993527) rotate(-100.000000) translate(-32.766593, -59.993527) ">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                                    <use stroke="#FFFFFF" stroke-width="2" xlink:href="#path-3"></use>
+                                </g>
+                                <path d="M76.5744985,12 C63.9078318,12 54.9078318,15.3333333 49.5744985,22 C41.5744985,32 43.5744985,47 25.5744985,45" id="路径-20复制-3" stroke="#FFFFFF" stroke-width="2" opacity="0.115187872" transform="translate(51.074498, 28.590613) rotate(-100.000000) translate(-51.074498, -28.590613) "></path>
+                                <path d="M72.3079059,55.5970854 C57.6412392,56.2637521 48.3079059,59.5970854 44.3079059,65.5970854 C38.3079059,74.5970854 39.3079059,90.5970854 21.3079059,88.5970854" id="路径-20复制" stroke="#FFFFFF" stroke-width="2" opacity="0.6"></path>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="编组-25" transform="translate(7.271414, 7.021642)">
+                        <path d="M8.38945745,12 C4.09832834,12 1.69343057,13.2729922 1.07297768,15.0049118 C1.70752301e-13,18 4.48259547,21.8482595 16,23 C26,24 27,25 27,27 C27,28 24,29 22,29 L22,33 C29,33 33,30 32.9961488,26.7446809 C32.9931662,24.2234813 32,20 18,20 C11,20 3,19 3,15 C3,13.6666667 4.79648582,12.6666667 8.38945745,12 Z" id="路径-21" fill="#FFC15B" fill-rule="nonzero"></path>
+                        <ellipse id="椭圆形" fill="#2B2F6E" cx="22" cy="31.5" rx="5" ry="2.5"></ellipse>
+                        <ellipse id="椭圆形复制-4" fill="#2B2F6E" transform="translate(8.000000, 12.000000) scale(1, -1) translate(-8.000000, -12.000000) " cx="8" cy="12" rx="2" ry="1"></ellipse>
+                        <path d="M8,10 C10.6666667,7.47275933 12,5.47275933 12,4 C12,1.790861 10.209139,0 8,0 C5.790861,0 4,1.790861 4,4 C4,5.47275933 5.33333333,7.47275933 8,10 Z" id="椭圆形复制-2" fill="#4751F1"></path>
+                        <circle id="椭圆形复制-3" fill="#FFFFFF" cx="8" cy="4" r="1.5"></circle>
+                        <path d="M22,28 C28.6666667,21.6818983 32,16.6818983 32,13 C32,7.4771525 27.5228475,3 22,3 C16.4771525,3 12,7.4771525 12,13 C12,16.6818983 15.3333333,21.6818983 22,28 Z" id="椭圆形" fill="#4751F1"></path>
+                        <circle id="椭圆形" fill="#FFFFFF" cx="22" cy="13" r="4"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

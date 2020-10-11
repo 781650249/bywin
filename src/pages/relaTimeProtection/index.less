@@ -1,0 +1,497 @@
+@import '~@/styles/theme.less';
+
+.videoWrap {
+  display: flex;
+  height: 100%;
+  padding: 16px;
+  background-color: @relaTime-pro-bg;
+
+}
+
+.videos {
+  position: relative;
+  flex: auto;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+
+  .actions {
+    text-align: left;
+
+    .inputGroup {
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .rangePicker {
+      display: inline-block;
+      width: 360px;
+      // margin-left: 508px;
+      overflow: hidden;
+      vertical-align: bottom;
+      transition: width 300ms;
+      z-index: 999;
+
+      &.hide {
+        width: 0;
+      }
+    }
+  }
+}
+
+.wrapTwo {
+  position: relative;
+  display: flex;
+  top: 14px;
+  // border-radius: 10px;
+  vertical-align: middle;
+
+  .vi {
+    position: relative;
+    // border-radius: 10px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      height: 24px;
+      margin: auto;
+      font-size: 30px;
+      color: fade(@white, 65);
+      line-height: 24px;
+      text-align: center;
+      content: '暂无视频';
+    }
+
+    .closed {
+      display: none;
+    }
+
+    .title {
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      color: blanchedalmond;
+      z-index: 100;
+      font-size: 15px;
+    }
+
+    .deviceInfo {
+      position: absolute;
+      top: 10px;
+      left: 16px;
+      z-index: 100;
+      color: #66EAF8;
+      font-weight: bold;
+      font-size: 30px;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      padding: 6px 8px;
+      // border-radius: 10px;
+      z-index: 100;
+      background-image: url('../../assets/relaTimeProtection/set.svg');
+      background-size: 100% 100%;
+    }
+
+  }
+
+  :global {
+    .ant-card-body {
+      padding: 14px;
+    }
+  }
+
+  .videoCloseTwo {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    // left: 16px;
+    z-index: 100;
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .fontTitle {
+    font-size: 16px;
+    font-weight: bold;
+    color: '#FFFFFF'
+  }
+
+  .fontFirst {
+
+    font-size: 14px;
+    color: #FFFFFF
+  }
+
+  .fontSecond {
+
+    opacity: 0.65;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: right;
+    line-height: 24px
+  }
+
+}
+
+.cardMar {
+  margin-top: 15px;
+}
+
+
+.checked {
+  border: 5px solid @primary-color;
+  // border-radius: 10px;
+
+
+  .ant-card {
+    background-color: none !important;
+  }
+
+}
+
+.hide {
+  display: none;
+}
+
+.fourVideo {
+  display: flex;
+  flex-wrap: wrap;
+  flex: auto;
+  flex-shrink: 0;
+}
+
+.fourVideoTwo {
+  top: -12px !important;
+}
+
+.fourVideoThree {
+  top: -12px !important;
+}
+
+
+.sixVideo {
+  display: flex;
+  height: 97%;
+  flex-wrap: wrap;
+  flex: auto;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.video {
+  position: relative;
+  top: 14px;
+  flex: auto;
+  flex-shrink: 0;
+  // border-radius: 10px;
+  background-color: #000000;
+  overflow-y: hidden;
+  margin-right: 13px;
+
+  .closed {
+    display: none;
+  }
+
+  &::before {
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    height: 24px;
+    margin: auto;
+    color: fade(@white, 65);
+    line-height: 24px;
+    text-align: center;
+    content: '暂无视频';
+  }
+
+
+  :global {
+    .index__video___1cnCN .index__checked___Fr-Id {
+      border: 5px solid @primary-color;
+    }
+  }
+
+  .title {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: blanchedalmond;
+    z-index: 100;
+    font-size: 15px;
+  }
+
+  .deviceInfo {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    z-index: 100;
+    color: #66EAF8;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    padding: 6px 8px;
+    border-radius: 10px;
+    z-index: 100;
+    background-image: url('../../assets/relaTimeProtection/set.svg');
+    background-size: 100% 100%;
+  }
+}
+
+
+
+.videoClose {
+  position: absolute;
+  top: 12px;
+  right: 25px;
+  z-index: 100;
+  color: #fff;
+  font-size: 18px;
+}
+
+
+
+.videoSix {
+  position: relative;
+  top: 14px;
+  flex: 0 0 32%;
+  // border-radius: 10px;
+  flex-shrink: 0;
+  background: #000000;
+  height: 57%;
+
+
+  &::before {
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    height: 24px;
+    margin: auto;
+    color: fade(@white, 65);
+    line-height: 24px;
+    text-align: center;
+    content: '暂无视频';
+  }
+
+  .closed {
+    display: none;
+  }
+
+  .title {
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    color: blanchedalmond;
+    z-index: 100;
+    font-size: 15px;
+
+  }
+
+  .deviceInfo {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    z-index: 100;
+    color: #66EAF8;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    padding: 6px 8px;
+    border-radius: 10px;
+    z-index: 100;
+    background-image: url('../../assets/relaTimeProtection/set.svg');
+    background-size: 100% 100%;
+  }
+}
+
+
+.third {
+  // top: -16px !important;
+  margin-top: 15px;
+}
+
+.firstOne {
+  flex: 0 0 65.2%;
+  width: 65.2% !important;
+  max-width: 65.2%;
+}
+
+.twoVideo {
+  height: 27%;
+  width: 32%;
+  margin-left: 1.2%;
+}
+
+.threeVideo {
+  height: 27%;
+  width: 32%;
+  flex: 0 0 32%;
+  position: absolute;
+  right: 1.5%;
+  top: 31.6%;
+}
+
+.sansiwu {
+  top: -13px !important;
+  margin-right: 1.3%;
+  max-width: 99%;
+  height: 30% !important;
+}
+
+.camera {
+  width: 320px !important;
+  padding-right: 16px;
+  height: 100%;
+  background-color: rgb(10, 31, 72);
+
+  .search {
+    height: 32px;
+    margin: 0 0 14px 0;
+
+    :global {
+      .ant-input-prefix {
+        margin-right: 9px;
+      }
+    }
+  }
+
+  .listTitle {
+    font-size: 14px;
+    position: relative;
+    padding-left: 5px;
+    color: #FFFFFF;
+
+    :global {
+      .ant-select-selector {
+        padding-left: 20px !important;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: 8px;
+      bottom: -5px;
+      // left: -6px;
+      display: inline-block;
+      height: 18px;
+      width: 14px;
+      color: #FFFFFF;
+      background-image: url('../../assets/relaTimeProtection/gjd.png');
+      background-size: 100% 100%;
+      content: '';
+    }
+  }
+
+  .list {
+    height: calc(100% - 48px);
+    overflow: auto;
+    background-color: @relaTime-pro-list;
+
+    :global {
+      .ant-tree {
+        background-color: transparent;
+      }
+
+      .site-tree-search-value {
+        color: @error-color;
+      }
+
+      .ant-tree .ant-tree-treenode {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &Warn {
+      &::after {
+        background-image: url('../../assets/relaTimeProtection/gz.png');
+        background-size: 100% 100%;
+        height: 15px;
+        width: 15px;
+      }
+    }
+  }
+
+
+  .footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 40px;
+  }
+}
+
+@keyframes swing {
+  0% {
+    // width: 12px;
+    height: 18px;
+    background-image: url('../../assets/relaTimeProtection/zxtmc.svg');
+    opacity: 0.3;
+  }
+
+  25% {
+    // width: 13px;
+    height: 18px;
+    opacity: 0.4;
+  }
+
+  50% {
+    // width: 15px;
+    height: 18px;
+    background-image: url('../../assets/relaTimeProtection/zxtmc.svg');
+    opacity: 0.6;
+  }
+
+  75% {
+    // width: 16px;
+    height: 18px;
+    opacity: 0.8;
+
+  }
+
+  100% {
+    width: 18px;
+    height: 18px;
+    background-image: url('../../assets/relaTimeProtection/zxtmc.svg');
+    opacity: 1.0;
+  }
+}
+
+
+
+.videoHistory {
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  z-index: 100;
+  width: 500px;
+  color: #fff;
+  font-size: 18px;
+
+    .rangePicker {
+      position: absolute;
+      top: 0;
+      left: 120px;
+      width: 300px;
+      transition: width 300ms
+    }
+}

@@ -1,0 +1,12 @@
+@import '~@/styles/theme.less';
+
+.videoWrapper {
+  :global {
+    .ReactCrop__crop-selection {
+      border: 2px solid @error-color;
+    }
+    .ReactCrop__drag-handle {
+      display: none;
+    }
+  }
+}

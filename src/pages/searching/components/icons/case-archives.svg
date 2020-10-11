@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>分组 copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="13" cy="13" r="13"></circle>
+        <filter x="-57.7%" y="-57.7%" width="215.4%" height="215.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.00392156863   0 0 0 0 0.0470588235   0 0 0 0 0.149019608  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="线索库6-多选碰撞-copy" transform="translate(-753.000000, -290.000000)">
+            <g id="分组-copy" transform="translate(763.000000, 300.000000)">
+                <g id="Oval" fill-rule="nonzero" transform="translate(13.000000, 13.000000) scale(1, -1) translate(-13.000000, -13.000000) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FF7400" xlink:href="#path-1"></use>
+                </g>
+                <g id="操作日志" transform="translate(6.000000, 7.000000)">
+                    <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="13" height="13"></rect>
+                    <path d="M12.0714286,1.625 L2.52040816,1.625 L2.52040816,13 L8.96734694,13 L12.0714286,13 L12.0714286,1.625 Z M10.4795918,0 L0.928571429,0 L0.928571429,11.375 L1.7244898,11.375 L1.7244898,0.8125 L10.4795918,0.8125 L10.4795918,0 Z M4.1122449,3.25 L9.68367347,3.25 L9.68367347,4.875 L4.1122449,4.875 L4.1122449,3.25 Z M4.1122449,6.5 L9.68367347,6.5 L9.68367347,8.125 L4.1122449,8.125 L4.1122449,6.5 Z M4.1122449,9.75 L9.68367347,9.75 L9.68367347,11.375 L4.1122449,11.375 L4.1122449,9.75 Z" id="形状" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,103 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 1142px;
+  height: 100%;
+  padding: 0 16px 16px;
+  background-color: @ap-bg;
+  :global {
+    .ant-form-item {
+      .ant-select,
+      .ant-cascader-picker,
+      .ant-input {
+        max-width: 360px;
+      }
+    }
+  }
+}
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 48px;
+  color: @text-color;
+  font-size: 20px;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+}
+.treeContainer {
+  height: 100%;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 48px;
+}
+h3.title {
+  margin-bottom: 16px;
+  line-height: 20px;
+}
+.container {
+  padding: 16px;
+  background-color: @ap-container-bg;
+  border: @ap-container-border;
+}
+
+.event {
+  margin-right: 16px;
+  padding: 0 16px 16px;
+  :global {
+    .ant-btn-background-ghost {
+      color: @text-color;
+      border-color: @text-color;
+    }
+  }
+  &Title {
+    position: relative;
+    line-height: 44px;
+    text-indent: 12px;
+    &::before {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      display: inline-block;
+      width: 3px;
+      height: 14px;
+      background-color: @primary-color;
+      content: '';
+    }
+  }
+  &Item {
+    position: relative;
+    height: 32px;
+    margin-bottom: 8px;
+    line-height: 32px;
+    text-indent: 12px;
+    cursor: pointer;
+    transition: background-color .3s;
+    &:hover,
+    &.active {
+      background-color: fade(@primary-color, 25);
+    };
+    &Delete {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 32px;
+      line-height: 32px;
+      text-align: center;
+      text-indent: 0;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    &:hover &Delete {
+      opacity: 1;
+    }
+  }
+
+}
+

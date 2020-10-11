@@ -1,0 +1,162 @@
+@import '~@/styles/theme.less';
+
+.titleBox {
+  position: absolute;
+  width: 100%;
+  height: 24px;
+  margin-left: -1.35%;
+  color: @surveillance-white;
+  font-size: 22px;
+  line-height: 24px;
+  text-align: center;
+}
+.siteBox {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 262px;
+  height: 72px;
+  padding: 14px 12px 16px 76px;
+  color: @surveillance-white;
+  background: url(../images/site-bg.png) no-repeat;
+  background-size: 100% 100%;
+  & > p {
+    margin-bottom: 0;
+  }
+}
+.dayBar {
+  position: absolute;
+  top: calc(37.28% + 18px);
+  left: 22px;
+  display: flex;
+  flex-direction: column;
+  width: 31.85%;
+  height: 31.14%;
+  .chartWrapper {
+    display: flex;
+    flex: auto;
+    padding: 14px;
+  }
+}
+.warnBar {
+  position: absolute;
+  top: 18px;
+  left: 22px;
+  display: flex;
+  flex-direction: column;
+  width: 31.85%;
+  height: 37.28%;
+  &Content {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    padding: 14px;
+    &Top {
+      display: flex;
+      align-items: center;
+      height: 44px;
+      padding-left: 22px;
+      background-image: linear-gradient(
+        90deg,
+        rgba(64, 148, 223, 0.28) 1%,
+        rgba(79, 180, 216, 0) 100%
+      );
+      border-radius: 22px 0 0 22px;
+      & > :first-child {
+        color: @surveillance-num-light;
+        font-size: 40px;
+        font-family: DINCondensed, sans-serif;  
+        letter-spacing: 2.18px;
+      }
+      & > :last-child {
+        margin-left: 12px;
+        & > span {
+          display: block;
+          color: fade(@surveillance-white, 65);
+          font-size: 12px;
+          line-height: 16px;
+        }
+        & > :first-child {
+          color: @surveillance-num-light;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+.lineChart {
+  flex: auto;
+  margin: 32px -16px 16px -16px;
+}
+.bottomBar {
+  position: absolute;
+  top: calc(68.42% + 18px + 12px);
+  left: 22px;
+  width: 52%;
+  min-width: 482px;
+  height: calc(31.58% - 18px - 12px);
+  &Content {
+    height: 88%;
+    background: url(../images/car-info-bg.png) no-repeat;
+    background-size: 100% 100%;
+  }
+  &Title {
+    position: absolute;
+    top: 9.22%;
+    left: 5.6%;
+    display: flex;
+    justify-content: space-between;
+    width: 46%;
+    color: @surveillance-white;
+    font-size: 16px;
+    &Btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 24px;
+      background-image: @surveillance-btn-bg;
+      border: 1px solid @surveillance-btn-border;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+      user-select: none;
+      &:hover {
+        background-image: @surveillance-btn-bg-hover;
+        border: 1px solid fade(@surveillance-btn-border, 80);
+      }
+      &:active {
+        background-image: @surveillance-btn-bg;
+        border: 1px solid @surveillance-btn-border;
+      }
+      & > :first-child {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  &Info {
+    position: absolute;
+    top: 25.84%;
+    display: flex;
+    width: 48.68%;
+    height: 50.12%;
+    &Card {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      & > p {
+        margin-bottom: 0;
+        & > :first-child {
+          margin-right: 12px;
+          color: @surveillance-num-light;
+          font-size: 28px;
+          font-family: DINCondensed, sans-serif;
+        }
+      }
+    }
+  }
+}

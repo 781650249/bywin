@@ -1,0 +1,45 @@
+@import '~@/styles/theme.less';
+
+.list {
+  position: absolute;
+  top: 16px;
+  left: calc(236px + 32px);
+  z-index: 9;
+  max-height: calc(100vh - 72px);
+  padding: 24px;
+  padding-left: 0;
+  overflow: auto;
+  color: @text-color;
+  background-color: @seaerch-body-bg;
+  transform: scale(0);
+  transform-origin: 0 0;
+  transition: transform .3s;
+  :global {
+    .ant-tree {
+      li {
+        padding: 0;
+      }
+      .ant-tree-node-content-wrapper {
+        color: @text-color;
+      }
+    }
+    .ant-checkbox-wrapper {
+      color: @text-color;
+    }
+  }
+  &.visible {
+    transform: scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+}

@@ -1,0 +1,76 @@
+@import '~@/styles/theme.less';
+
+.container {
+  flex: auto;
+  margin-top: 12px;
+  margin-right: -12px;
+  padding: 0 34px 12px 22px;
+  overflow: auto;
+  overflow: overlay;
+  .areaSite {
+    height: 42px;
+    border-bottom: 1px solid @surveillance-bar-border;  
+    &>span {
+      position: relative;
+      color: @surveillance-white;
+      font-size: 18px;
+      line-height: 36px;
+      &::after {
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: @surveillance-primary-color;
+        content: '';
+      }
+    }
+  }
+  .areaInput {
+    margin-top: 32px;
+    font-size: 16px;
+    line-height: 32px;
+    &>:first-child {
+      margin-right: 20px;
+    }
+  }
+  .operateColumn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 32px;
+    margin-bottom: 8px;
+    &>span {
+      font-size: 16px;
+    }
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    &>button {
+      width: 100px;
+    }
+  }
+}
+
+.collapseBox {
+  margin-top: 16px;
+  background: transparent;
+  :global {
+    .ant-collapse-item {
+      margin-bottom: 8px;
+    }
+    .ant-collapse-header {
+      padding-left: 22px !important;
+      background: @surveillance-list-item-bg;
+      .ant-collapse-arrow {
+        right: 16px;
+        left: unset !important;
+      }
+    }
+    .ant-checkbox-wrapper {
+      margin-bottom: 8px;
+    }
+  }
+}

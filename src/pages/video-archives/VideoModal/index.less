@@ -1,0 +1,186 @@
+@import '~@/styles/theme.less';
+
+.wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  padding: 24px;
+  background-color: fade(@text-color-inverse, 20);
+  transition: all .3s;
+}
+.container {
+  position: relative;
+  height: 100%;
+  background-color: @video-modal-bg;
+}
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+}
+.videoWrap {
+  display: flex;
+  height: calc(100% - 120px - 32px);
+  // margin-bottom: 16px;
+  padding: 16px;
+  background-color: @video-archive-bg;
+}
+.videos {
+  position: relative;
+  display: flex;
+  flex: auto;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  .actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 100;
+    text-align: right;
+    .inputGroup {
+      display: inline-block;
+      margin-right: 8px;
+      .before {
+        display: inline-block;
+        width: 32px;
+        color: @text-color;
+        font-size: 16px;
+        line-height: 32px;
+        text-align: center;
+        vertical-align: bottom;
+        background-color: @primary-color;
+      }
+    }
+    .rangePicker {
+      display: inline-block;
+      width: 360px;
+      margin-left: 8px;
+      overflow: hidden;
+      vertical-align: bottom;
+      transition: width 300ms;
+      &.hide {
+        width: 0;
+      }
+    }
+  }
+}
+.video {
+  position: relative;
+  flex: auto;
+  flex-shrink: 0;
+  border: 1px solid @primary-color;
+  .videoClose {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 100;
+    color: #fff;
+    font-size: 18px;
+  }
+}
+.camera {
+  width: 320px;
+  padding-left: 16px;
+  .header {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .search {
+    height: 32px;
+    margin: 0 0 24px 0;
+  }
+  .list {
+    height: calc(100% - 40px - 40px - 56px);
+    overflow: auto;
+    &Item {
+      position: relative;
+      height: 40px;
+      margin-bottom: 12px;
+      padding-left: 16px;
+      line-height: 40px;
+      white-space: nowrap;
+      cursor: pointer;
+      &::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 4px;
+        background-color: @default-color;
+        transition: background .3s;
+        content: ' ';
+      }
+      &.active,
+      &:hover {
+        &::before {
+          background-color: @primary-color;
+        }
+
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 40px;
+  }
+}
+
+.tabs {
+  display: flex;
+  height: 120px;
+  margin: 16px 12px;
+  // padding: 16px 12px;
+  &Nav {
+    flex-shrink: 0;
+    width: 32px;
+  }
+  &Tab {
+    height: 50%;
+    padding: 4px 0;
+    text-align: center;
+    background-color: @video-archive-bg;
+    cursor: pointer;
+    transition: color .3s, background-color .3s;
+    &:hover {
+      color: @primary-color;
+    }
+    &.active {
+      color: @text-color-light;
+      background-color: @primary-color;
+    }
+  }
+  &Content {
+    display: flex;
+    flex: auto;
+    flex-wrap: nowrap;
+    height: calc(100% + 8px);
+    margin: 0 16px;
+    overflow: auto;
+    // background-color: @white;
+    scroll-behavior: smooth;
+    & > div {
+      width: 280px;
+    }
+  }
+  &Action {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-around;
+    width: 32px;
+  }
+}

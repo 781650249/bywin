@@ -1,0 +1,95 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 320px;
+  max-width: 420px;
+  min-height: 288px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  background-color: @acc-control-bg;
+}
+
+
+.header {
+  position: relative;
+  height: 50px;
+  padding: 0 16px;
+  color: @text-color-light;
+  line-height: 50px;
+}
+
+.actions {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  font-size: 16px;
+}
+.action {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex: auto;
+  color: @text-color-light;
+  // height: calc(100% - 50px - 96px);
+  & > div {
+    flex: 1;
+    text-align: center;
+  }
+}
+.footer {
+  display: flex;
+  height: 96px;
+  padding: 16px 16px 0;
+  // overflow: hidden;
+  :global {
+    .ant-input-number,
+    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      background-color: @acc-input-bg;
+      border-color: transparent;
+    }
+    .ant-form-item {
+      margin-bottom: 16px;
+    }
+    .ant-form-item-label > label {
+      height: 24px;
+      color: @text-color-light;
+    }
+    .ant-form-item-control-input {
+      min-height: 24px;
+    }
+    .ant-select-dropdown {
+      background-color:  fade(@acc-control-bg, 100);
+    }
+    .ant-select-item-option-active:not(.ant-select-item-option-disabled),
+    .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+      background-color: @acc-input-bg;
+    }
+    .ant-form-item .ant-input-number-handler-wrap {
+      display: none;
+    }
+    .ant-input-number-sm input {
+      text-align: center;
+    }
+  }
+}
+
+.inputDigital {
+  display: flex;
+  :global {
+    .ant-btn-icon-only.ant-btn-sm {
+      flex-shrink: 0;
+      background-color: fade(@acc-input-bg, 20);
+      border-color: transparent;
+      border-radius: 0;
+    }
+  }
+}

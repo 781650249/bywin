@@ -1,0 +1,194 @@
+@import '~@/styles/theme.less';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.statistic {
+  text-align: center;
+  &Title {
+    color: fade(@white, 65);
+  }
+  .pseudoElements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+  }
+  &Content {
+    position: relative;
+    display: inline-block;
+    width: 3.75vw;
+    height: 3.75vw;
+    overflow: hidden;
+    color: #42e7f5;
+    font-size: calc(12px + 1vh);
+    font-family: DINCondensed, sans-serif;
+    line-height: 3.75vw;
+    background: url(@/assets/home/ring-bg.png) no-repeat;
+    background-size: 100% 100%;
+    .borderRightTop,
+    .borderleftBottom {
+      &::before,
+      &::after {
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        .pseudoElements;
+      }
+    }
+    &::after {
+      background-image: url(@/assets/home/ring-scan.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      animation: rotate 2s linear infinite;
+      .pseudoElements;
+      @keyframes rotate {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+    .borderRightTop {
+      &::before {
+        background-image: url(@/assets/home/ring-border-1.png);
+        animation: swing-1 2.5s linear infinite alternate;
+        @keyframes swing-1 {
+          0% {
+            transform: rotate(0);
+          }
+          20% {
+            transform: rotate(15deg);
+          }
+          40% {
+            transform: rotate(-15deg);
+          }
+          60% {
+            transform: rotate(15deg);
+          }
+          100% {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+      &::after {
+        background-image: url(@/assets/home/ring-border-3.png);
+        animation: swing-3 2.5s linear infinite alternate;
+        @keyframes swing-3 {
+          0% {
+            transform: rotate(0);
+          }
+          20% {
+            transform: rotate(-15deg);
+          }
+          40% {
+            transform: rotate(0deg);
+          }
+          60% {
+            transform: rotate(-15deg);
+          }
+          100% {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    .borderleftBottom {
+      &::before {
+        background-image: url(@/assets/home/ring-border-2.png);
+        animation: swing-2 2.5s linear infinite alternate;
+        @keyframes swing-2 {
+          0% {
+            transform: rotate(0);
+          }
+          20% {
+            transform: rotate(15deg);
+          }
+          40% {
+            transform: rotate(0deg);
+          }
+          60% {
+            transform: rotate(45deg);
+          }
+          100% {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+      &::after {
+        background-image: url(@/assets/home/ring-border-4.png);
+        animation: swing-4 2s linear infinite alternate;
+        @keyframes swing-4 {
+          0% {
+            transform: rotate(0);
+          }
+          20% {
+            transform: rotate(10deg);
+          }
+          40% {
+            transform: rotate(0deg);
+          }
+          60% {
+            transform: rotate(20deg);
+          }
+          100% {
+            transform: rotate(-40deg);
+          }
+        }
+      }
+    }
+  }
+}
+.chartWrapper {
+  position: relative;
+  flex: auto;
+  .re {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 20px;
+    left: 30px;
+    overflow: hidden;
+    pointer-events: none;
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 100%;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: url(@/assets/home/person-and-vehicle-re.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      animation: move 4s ease-in 1s infinite;
+      content: '';
+      @keyframes move {
+        0% {
+          right: 100%;
+        }
+        33% {
+          right: 100%;
+        }
+        66% {
+          right: 0%;
+        }
+        100% {
+          right: -100%;
+        }
+      }
+    }
+  }
+}
+.chart {
+  width: 100%;
+  height: 100%;
+  // height: calc(100% - 4vh - 1.2vh - 7.5vh - 22px);
+  // overflow: hidden;
+}

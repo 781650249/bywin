@@ -1,0 +1,39 @@
+.container {
+  position: relative;
+  display: inline-block;
+  width: 108px;
+  height: 104px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  &.auto {
+    background-image: url(./images/real-time-state-auto.png);
+  }
+  &.cooling {
+    background-image: url(./images/real-time-state-cooling.png);
+  }
+  &.heating {
+    background-image: url(./images/real-time-state-heating.png);
+  }
+  &.arefaction {
+    background-image: url(./images/real-time-state-arefaction.png);
+  }
+}
+
+.temperature {
+  position: absolute;
+  bottom: 45%;
+  left: 30%;
+  color: @white;
+  // font-weight: bold;
+  font-size: 24px;
+  line-height: 1;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    font-weight: normal;
+    font-size: 12px;
+    text-indent: 2px;
+    content: '\2103';
+  }
+}

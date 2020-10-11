@@ -1,0 +1,239 @@
+@import '~@/styles/theme.less';
+
+.modalWrapper {
+  position: absolute;
+  right: 32px;
+  z-index: 22;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 64px - 310px - 20px);
+  overflow: hidden;
+  background:	@patrol-bar-bg;
+  transition: height .15s;
+  .modalTitle {
+    flex-shrink: 0;
+    height: 32px;
+    margin: 16px 0;
+    line-height: 32px;
+    &>span {
+      padding: 5px 20px 6px 20px;
+      color: @patrol-deep-font;
+      font-size: 16px;
+      background: #2379DF;
+      border-radius: 0 16px 16px 0;
+    }
+  }
+  .modalContent {
+    display: flex;
+    height: calc(100% - 64px - 64px);
+    padding: 0 20px;
+    &Left {
+      width: 366px;
+      height: 100%;
+      padding-right: 20px;
+      overflow-y: auto;
+      overflow-y: overlay;
+      border-right: 1px solid @patrol-list-border;
+      :global {
+        .ant-form-item {
+          margin-bottom: 16px;
+        }
+        .ant-switch-inner {
+          color: @patrol-switch-color;
+        }
+        .ant-switch-handle::before {
+          background-color: @patrol-switch-color;
+        }
+        .ant-radio-button-wrapper {
+          height: 24px;
+          line-height: 22px;
+        }
+      }
+      .formContent {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .staffCard {
+        position: relative;
+        display: flex;
+        height: 76px;
+        margin-top: 12px;
+        padding: 8px;
+        background: tint(@bg-normal, 10);
+        &Info {
+          margin-left: 10px;
+        }
+        .staffDelete {
+          position: absolute;
+          top: 6px;
+          right: 12px;
+          width: 18px;
+          height: 0;
+          overflow: hidden;
+          font-size: 14px;
+          cursor: pointer;
+        }
+        &:hover {
+          .staffDelete {
+            height: 18px;
+          }
+        }
+      }
+      .pointCard {
+        position: relative;
+        height: 76px;
+        margin-bottom: 12px;
+        padding: 12px 48px 12px 14px;
+        background: tint(@bg-normal, 10);
+        &>p {
+          margin-bottom: 8px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .pointCardAction {
+          position: absolute;
+          top: 6px;
+          right: 12px;
+          display: flex;
+          justify-content: space-between;
+          width: 38px;
+          height: 18px;
+          font-size: 14px;
+          &>span {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    &Right {
+      display: flex;
+      flex: auto;
+      flex-direction: column;
+      padding-left: 20px;
+      &Title {
+        padding-bottom: 16px;
+        color: @patrol-deep-font;
+      }
+      &Map {
+        position: relative;
+        height: calc(100% - 38px);
+        .smallMap {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .modalBottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 64px;
+    padding: 0 20px;
+  }
+}
+
+.addModal {
+  top: 122px;
+  overflow: hidden;
+  transition: all .25s;
+  :global {
+    .ant-modal-content {
+      background-color: @patrol-modal-bg;
+    }
+    .ant-modal-body {
+      padding: 12px;
+    }
+    .ant-modal-close-x {
+      width: 42px;
+      height: 42px;
+      color: @patrol-deeper-font;
+      font-size: 14px;
+      line-height: 42px;
+      &:hover {
+        color: @patrol-deep-font;
+      }
+    }
+    .ant-table-body {
+      background: @patrol-tabel-bg;
+    }
+    .ant-table-tbody > tr.ant-table-row-selected > td {
+      background: @patrol-tabel-bg;
+    }
+    .ant-table tbody > tr > td {
+      background: @patrol-tabel-bg;
+    }
+    .ant-table tbody > tr.ant-table-row:hover > td {
+      background: @patrol-tabel-bg-hover;
+    }
+    .ant-table-tbody > tr.ant-table-placeholder:hover > td {
+      background: @patrol-tabel-bg-hover;
+    }
+  }
+  &Contain {
+    display: flex;
+    &Left {
+      width: 468px;
+    }
+    &Right {
+      display: flex;
+      flex: auto;
+      margin-left: 20px;
+      padding-top: 31px;
+      .rightContent {
+        flex: auto;
+        padding-left: 20px;
+        border-left: 1px solid @patrol-list-border;
+        :global {
+          .ant-form-item {
+            margin-bottom: 12px;
+          }
+        }
+        .messageSpan {
+          margin-left: 10px;
+          color: @warning-color;
+        }
+      }
+    }
+  }
+  &Title {
+    color: @patrol-deep-font;
+    font-size: 16px;
+  }
+  &Map {
+    width: 468px;
+    height: 328px;
+  }
+  &ListTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    &>:first-child {
+      color: @patrol-deep-font;
+    }
+  }
+  &Bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 64px;
+  }
+  &EventList {
+    min-height: 368px;
+    overflow: auto;
+  }
+}
+
+.videoWrapper {
+  :global {
+    .ReactCrop__crop-selection {
+      border: 2px solid @error-color;
+    }
+    .ReactCrop__drag-handle {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,207 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  min-width: 1142px;
+  height: 100%;
+  padding: 0 16px 16px;
+  background-color: @personnel-bg;
+}
+.title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 40px;
+}
+.container {
+  display: flex;
+  height: calc(100% - 40px);
+}
+
+.menu {
+  flex-shrink: 0;
+  width: 16.6666667vw;
+  min-width: 240px;
+  max-width: 320px;
+  padding: 16px;
+  background-color: @personnel-menu-bg;
+  border: @personnel-menu-border;
+  :global {
+    .ant-tree {
+      background-color: transparent;
+    }
+  }
+}
+.main {
+  flex: auto;
+  margin-left: 16px;
+}
+
+.spin {
+  height: 100%;
+  :global(.ant-spin-container) {
+    height: 100%;
+  }
+}
+
+.sort {
+  display: flex;
+  justify-content: flex-start;
+  height: 32px;
+  margin-bottom: 16px;
+  color: @text-color-light;
+  font-size: 14px;
+  line-height: 32px;
+  &Item {
+    width: 120px;
+    margin-left: -18px;
+    text-align: center;
+    background: url(./images/sort-center-bg.png) no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+    opacity: 0.65;
+    transition: opacity 0.3s;
+    &:first-child {
+      width: 112px;
+      margin-left: 0;
+      background-image: url(./images/sort-first-bg.png);
+    }
+    &:last-child {
+      width: 112px;
+      background-image: url(./images/sort-last-bg.png);
+    }
+    &.active,
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.form {
+  height: 32px;
+  margin-bottom: 16px;
+  input::-webkit-input-placeholder {
+    color: fade(@text-color, 45);
+  }
+}
+.action {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background-color: @personnel-input-bg;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: @primary-color;
+  }
+}
+
+.drawer {
+  :global {
+    .ant-table thead > tr > th {
+      background-color: @personnel-input-bg;
+    }
+    .ant-table {
+      background-color: transparent;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex: auto;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: calc(100% - 48px - 48px - 48px);
+  margin-right: -10px;
+  overflow: auto;
+  overflow: overlay;
+}
+.footer {
+  height: 32px;
+  margin-top: 16px;
+  text-align: right;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  min-height: 160px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 16px;
+  background-color: @personnel-card-bg;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: fade(@primary-color, 30);
+    .cardExtra {
+      opacity: 1;
+    }
+  }
+  &Extra {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: @personnel-icon-color;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    &Item {
+      display: inline-block;
+      width: 24px;
+      margin-left: 8px;
+      line-height: 24px;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+  &.fill {
+    height: 0;
+    min-height: 0;
+    margin-bottom: 0;
+    padding: 0 16px;
+    overflow: hidden;
+    box-shadow: @personnel-card-shadow;
+  }
+  .avatar {
+    height: 100px;
+    height: min-content;
+    margin-right: 16px;
+    border: @personnel-card-avatar-border;
+  }
+  .info {
+    position: relative;
+    flex: auto;
+    &Name {
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: color .3s;
+      &:hover {
+        color: @proces-color;
+        text-decoration: underline;
+      }
+    }
+    &Item {
+      display: flex;
+      margin-bottom: 8px;
+      line-height: 20px;
+      &Icon {
+        width: 20px;
+      }
+      &Text {
+        flex: auto;
+      }
+      &.absolute {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+      }
+    }
+  }
+}

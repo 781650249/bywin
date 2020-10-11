@@ -1,0 +1,460 @@
+@import '~@/styles/theme.less';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 100%;
+}
+
+.count {
+  position: relative;
+  flex: auto;
+  flex-shrink: 0;
+  width: 100%;
+  margin-bottom: 1.2vh;
+  padding: 1.2vh 0.6vh;
+  overflow: hidden;
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: url(@/assets/home/intelligent-warning-border.png) no-repeat;
+    background-position: 100% 0;
+    background-size: auto 100%;
+    content: '';
+    pointer-events: none;
+  }
+  &::before {
+    left: 0;
+    transform: rotateY(180deg);
+  }
+  &::after {
+    right: 0;
+  }
+  &Items {
+    position: relative;
+    display: flex;
+    height: 100%;
+    padding: 0 0.8vh;
+    overflow: hidden;
+    background-image: linear-gradient(180deg, rgba(52, 125, 255, 0.16) 0%, transparent 100%);
+    &::after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: url(@/assets/home/intelligent-warning-re.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      animation: move 4s ease-in 1s infinite;
+      content: '';
+      pointer-events: none;
+      @keyframes move {
+        0% {
+          top: 100%;
+          height: 100%;
+        }
+        33% {
+          top: 100%;
+          height: 100%;
+        }
+        66% {
+          top: -2px;
+          height: 100%;
+        }
+        100% {
+          top: -2px;
+          height: 0;
+        }
+      }
+    }
+  }
+  &Item {
+    display: flex;
+    flex-direction: column;
+    // flex-grow: 1;
+    flex-shrink: 0;
+    width: 25%;
+    font-size: calc(12px + (100vw - 1920px) * 0.00625);
+    .countText {
+      margin-top: -1vh;
+      text-align: center;
+    }
+    .swing(@startAngle: 0, @endAngle: 45deg, @name: swing) {
+      animation: @name 2s ease infinite alternate;
+      @keyframes @name {
+        0% {
+          transform: rotate(@startAngle);
+        }
+        100% {
+          transform: rotate(@endAngle);
+        }
+      }
+    }
+    &:nth-child(1) {
+      justify-content: flex-start;
+      .countBox {
+        &bg,
+        &::before {
+          .swing(0deg, 45deg, swing1);
+        }
+      }
+    }
+    &:nth-child(2) {
+      justify-content: flex-end;
+      .countBox {
+        &Bg,
+        &::before {
+          .swing(180deg, 225deg, swing2);
+        }
+      }
+    }
+    &:nth-child(3) {
+      justify-content: flex-start;
+      .countBox {
+        &Bg,
+        &::before {
+          .swing(90deg, 135deg, swing3);
+        }
+      }
+    }
+    &:nth-child(4) {
+      justify-content: flex-end;
+      .countBox {
+        &Bg,
+        &::before {
+          .swing(-90deg, -45deg, swing4);
+        }
+      }
+    }
+  }
+  &Box {
+    position: relative;
+    text-align: center;
+    // background-image: url(@/assets/home/intelligent-warning-box-1.png);
+    background-repeat: no-repeat;
+    img {
+      width: 50%;
+      margin: 25%;
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      content: '';
+    }
+    &::before {
+      background-image: url(@/assets/home/intelligent-warning-box-ring.png);
+      background-size: 55% 55%;
+      // animation: swing 2s ease infinite alternate;
+    }
+    &::after {
+      background-image: url(@/assets/home/intelligent-warning-box-scan.png);
+      background-size: 60% 60%;
+      opacity: 0.5;
+      animation: spin 3s linear infinite;
+    }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    &Line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    &Line1,
+    &Line2 {
+      position: absolute;
+      top: 50%;
+      right: calc(50% - 30px);
+      z-index: 0;
+      width: 60px;
+      height: 1px;
+      background-color: rgba(66, 231, 245, 0.35);
+      transform-origin: 50% 50%;
+      &::before,
+      &::after {
+        position: absolute;
+        top: -1px;
+        display: block;
+        width: 3px;
+        height: 3px;
+        background-color: #42e7f5;
+        border-radius: 50%;
+        box-shadow: 0 0 4px #42e7f5;
+        content: '';
+      }
+      &::before {
+        left: 0;
+      }
+      &::after {
+        right: 0;
+      }
+
+    }
+  }
+  &Box1 {
+    .countBoxLine {
+      &1 {
+        transform: rotate(135deg) scaleX(0.7);
+        animation: box1line1 5s 1s infinite alternate;
+      }
+      &2 {
+        transform: rotate(80deg) scaleX(1);
+        animation: box1line2 5s 1s infinite alternate;
+      }
+    }
+
+  }
+  &Box2 {
+    .countBoxLine {
+      &1 {
+        transform: rotate(30deg) scaleX(0.8);
+        animation: box2line1 5s 1s infinite alternate;
+      }
+      &2 {
+        transform: rotate(-30deg) scaleX(1);
+        animation: box2line2 5s 1s infinite alternate;
+      }
+    }
+  }
+  &Box3 {
+    .countBoxLine {
+      &1 {
+        transform: rotate(15deg) scaleX(0.75);
+        animation: box3line1 5s 1s infinite alternate;
+      }
+      &2 {
+        transform: rotate(100deg) scaleX(1);
+        animation: box3line2 5s 1s infinite alternate;
+      }
+    }
+  }
+  &Box4 {
+    .countBoxLine {
+      &1 {
+        transform: rotate(100deg) scaleX(0.85);
+        animation: box4line1 5s 1s infinite alternate;
+      }
+      &2 {
+        transform: rotate(80deg) scaleX(1);
+        animation: box4line2 5s 1s infinite alternate;
+      }
+    }
+  }
+
+
+  @keyframes box1line1 {
+    0% {
+      transform: rotate(135deg) scaleX(0.7);
+    }
+    20% {
+      transform: rotate(145deg) scaleX(0.7);
+    }
+    40% {
+      transform: rotate(150deg) scaleX(1);
+    }
+    60% {
+      transform: rotate(165deg) scaleX(1);
+    }
+    100% {
+      transform: rotate(120deg) scaleX(1);
+    }
+  }
+  @keyframes box1line2 {
+    0% {
+      transform: rotate(80deg) scaleX(1);
+    }
+    25% {
+      transform: rotate(95deg) scaleX(0.75);
+    }
+    50% {
+      transform: rotate(75deg) scaleX(1);
+    }
+    100% {
+      transform: rotate(55deg) scaleX(1);
+    }
+  }
+
+  @keyframes box2line1 {
+    0% {
+      transform: rotate(30deg) scaleX(0.8);
+    }
+    20% {
+      transform: rotate(60deg) scaleX(0.8);
+    }
+    40% {
+      transform: rotate(55deg) scaleX(1);
+    }
+    60% {
+      transform: rotate(65deg) scaleX(1);
+    }
+    100% {
+      transform: rotate(45deg) scaleX(1.1);
+    }
+  }
+  @keyframes box2line2 {
+    0% {
+      transform: rotate(-30deg) scaleX(1);
+    }
+    25% {
+      transform: rotate(-30deg) scaleX(0.75);
+    }
+    50% {
+      transform: rotate(-45deg) scaleX(1);
+    }
+    100% {
+      transform: rotate(-20deg) scaleX(1);
+    }
+  }
+
+  @keyframes box3line1 {
+    0% {
+      transform: rotate(15deg) scaleX(0.7);
+    }
+    20% {
+      transform: rotate(0deg) scaleX(0.7);
+    }
+    40% {
+      transform: rotate(5deg) scaleX(1);
+    }
+    60% {
+      transform: rotate(20deg) scaleX(1.1);
+    }
+    100% {
+      transform: rotate(-10deg) scaleX(1);
+    }
+  }
+  @keyframes box3line2 {
+    0% {
+      transform: rotate(100deg) scaleX(1);
+    }
+    25% {
+      transform: rotate(100deg) scaleX(0.75);
+    }
+    50% {
+      transform: rotate(75deg) scaleX(1);
+    }
+    100% {
+      transform: rotate(120deg) scaleX(1);
+    }
+  }
+
+  @keyframes box4line1 {
+    0% {
+      transform: rotate(100deg) scaleX(0.75);
+    }
+    20% {
+      transform: rotate(125deg) scaleX(0.8);
+    }
+    40% {
+      transform: rotate(110deg) scaleX(0.8);
+    }
+    60% {
+      transform: rotate(115deg) scaleX(1);
+    }
+    100% {
+      transform: rotate(135deg) scaleX(1);
+    }
+  }
+  @keyframes box4line2 {
+    0% {
+      transform: rotate(80deg) scaleX(1);
+    }
+    25% {
+      transform: rotate(75deg) scaleX(0.75);
+    }
+    50% {
+      transform: rotate(65deg) scaleX(1.1);
+    }
+    100% {
+      transform: rotate(90deg) scaleX(1);
+    }
+  }
+
+  &Number {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.items {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+  height: 12.2vh;
+}
+.item {
+  width: calc((100% - 0.4vh) / 2);
+  height: 5.9vh;
+}
+.card {
+  position: relative;
+  height: 100%;
+  padding: 0.6vh;
+  background-color: fade(#d8d8d8, 8);
+  &Avatar {
+    position: absolute;
+    top: 0.6vh;
+    left: 0.6vh;
+    width: 4.7vh;
+    height: 4.7vh;
+    background-color: #000;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &Content {
+    height: 100%;
+    margin-left: 5.9vh;
+  }
+
+  &Text {
+    height: @height;
+    line-height: @height;
+    white-space: nowrap;
+    @height: 2.4vh;
+  }
+  &Tag {
+    display: inline-block;
+    height: @height;
+    padding: 0 0.6vh;
+    font-size: 12px;
+    line-height: @height;
+    background-color: @primary-color;
+    @height: 2vh;
+  }
+}

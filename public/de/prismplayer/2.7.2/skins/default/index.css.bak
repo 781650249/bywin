@@ -1,0 +1,174 @@
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  @font-face {font-family: 'iconfont_prism';
+    src: url('http://g.tbcdn.cn/de/prismplayer/1.0.3/skins/default/iconfont/iconfont.eot'); /* IE9*/
+    src: url('http://g.tbcdn.cn/de/prismplayer/1.0.3/skins/default/iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('http://g.tbcdn.cn/de/prismplayer/1.0.3/skins/default/iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('http://g.tbcdn.cn/de/prismplayer/1.0.3/skins/default/iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('http://g.tbcdn.cn/de/prismplayer/1.0.3/skins/default/iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+  }
+
+  .prism-iconfont{
+    font-family:'iconfont_prism';
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+  }
+
+
+  @-moz-keyframes spin {
+      0% {
+          -moz-transform: rotate(0deg);
+      }
+
+      100% {
+          -moz-transform: rotate(360deg);
+      };
+  }
+
+  @-webkit-keyframes spin {
+      0% {
+          -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+          -webkit-transform: rotate(360deg);
+      };
+  }
+
+
+  //全屏时候隐藏默认控制面板
+  video::-webkit-media-controls {
+      display:none !important;
+  }
+  video::-webkit-media-controls-enclosure {
+      display:none !important;
+  }
+
+  .prism-player {
+    position: relative;
+    width: 320px;
+    height: 180px;
+    margin: 0 auto;
+  }
+  .prism-player.prism-fullscreen {
+    position:absolute;
+    left:0; right:0; top:0; bottom:0;
+    width:100%; height:100%;
+    overflow:hidden;
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+  }
+  .prism-controlbar{
+    background: #000;
+    height: 40px;
+    position: absolute;
+    opacity: 0.65;
+    width: 100%;
+    z-index: 2147483648;
+    bottom: 0;
+  }
+  .prism-controlbar .prism-small-play-btn {
+    top: 6px;
+    height: 20px;
+
+    border-right: 2px solid #282626;
+    padding-top: 6px;
+    padding-right: 10px;
+    padding-left: 14px;
+  }
+
+  .prism-player .prism-big-play-btn{
+
+    border: 2px solid #dfc8b9;
+    width:32px;
+    height: 32px;
+    position: absolute;
+    border-radius: 4px;
+    color: #fff;
+    margin: auto;
+    top: 0; 
+    left: 0; 
+    bottom: 0; 
+    right: 0;
+    text-align: center;
+    line-height: 32px;
+    background: rgba(255,255,255,0.12);
+  }
+
+  .prism-player .prism-loading {
+      -moz-animation: spin .5s infinite linear;
+      -webkit-animation: spin .5s infinite linear;
+      border: none;
+      background:rgba(255,255,255,0);
+  }
+
+  .prism-controlbar .prism-progress {
+    position: absolute;
+    top: 5px;
+    left: 24px;
+    width: 200px;
+  }
+  .prism-controlbar .prism-muted-btn {
+    top: 5px;
+    right: 40px;
+  }
+  .prism-controlbar .prism-fullscreen-btn {
+    top: 11px;
+    right: 12px;
+  }
+  .prism-controlbar .prism-time-display {
+    position: absolute;
+    height: 20px;
+    color: #fff;
+    top: 11px;
+    right: 42px;
+  }
+
+  .prism-slide {
+    background: #353535;
+    height: 2px;
+    /* position: absolute; */
+    /* width: 42.8125%; */
+    top: 19px;
+    left: 53px;
+    opacity: 1;
+    /* margin-top: 14px; */
+    position: relative;
+    margin-right: 190px;
+  }
+
+  .prism-slide-has {
+    background: #dcdcdc;
+    position: absolute;
+    width: 0px;
+    height: 2px;
+  }
+
+  .prism-slide-handler {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: rgba(255,255,255,0);
+    border-radius: 15px;
+    top: -13px; 
+    cursor: pointer;
+    left: -15px;
+  }
+
+  .prism-slide-handler .prism-slide-handler-center{
+    background: #fff;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    left: 8px;
+    position: absolute;
+    top: 8px;
+  }

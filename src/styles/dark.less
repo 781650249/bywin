@@ -1,0 +1,301 @@
+@default-color: #a7b7cc;
+@primary-color: #4751f1;
+@proces-color: #34d6ff;
+@error-color: #f5222d;
+@warning-color: #faad14;
+@success-color: #52c41a;
+
+@white: #fff;
+@black: #000;
+
+@normal-color: #283465;
+@bg-normal: #101b43;
+@bg-dark: #010c37;
+@bg-light: #223273;
+@bg-list: #051127;
+// @card-bg: fade(#364379, 48);
+
+// 文字颜色
+@text-color: fade(@white, 65);
+@text-color-light: fade(@white, 85);
+@text-color-inverse: fade(@black, 65);
+@text-color-light-inverse: fade(@black, 85);
+@link-color: @proces-color;
+
+@input-bg: tint(@bg-normal, 10);
+@input-icon-bg: tint(@bg-normal, 15);
+
+// 组件
+// card
+@card-bg: fade(#364379, 48);
+@card-shadow: 0 2px 16px 0 fade(@black, 8);
+@card-border-avatar: @default-color;
+@card-text-color: @white;
+
+// viewer
+@viewer-bg: fade(@black, 65);
+@viewer-btn-bg: fade(@black, 65);
+@viewer-btn-color: @white;
+
+// tag
+@tag-color: @white;
+@tag-default-color: @text-color;
+@tab-border-default-color: fade(@white, 65);
+@tag-default: @bg-normal;
+@tag-primary: fade(@primary-color, 65);
+@tag-top: fade(@primary-color, 15);
+@tag-error: fade(@error-color, 65);
+@tag-warning: fade(@warning-color, 65);
+@tag-success: fade(@success-color, 65);
+
+// Layout 外层
+@layout-body-bg: darken(@bg-light, 8);
+@layout-logo-bg: @primary-color;
+@layout-sider-bg: @bg-dark;
+@layout-sider-color: @white;
+@layout-content-bg: @bg-dark;
+@layout-content-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+
+// 页面
+// search 街面巡防
+@search-text-color: fade(#fff, 65);
+@search-lighten-bg: @normal-color;
+@seaerch-header-bg: @bg-light;
+@seaerch-body-bg: @bg-normal;
+@seaerch-image-bg: fade(#07132b, 85%);
+@search-viewer-bg: @bg-normal;
+@search-viewer-btn-bg: tint(@bg-normal, 16);
+@search-viewer-btn-color: fade(@white, 65);
+@search-viewer-btn-hover-color: @white;
+@search-viewer-toolbar-bg: @bg-dark;
+@search-track-detail-header-color: @white;
+@search-track-detail-color: @text-color;
+@search-track-detail-close-bg: @bg-normal;
+
+// video-archives 视频档案
+@video-archive-bg: @bg-normal;
+@video-archive-text-color: @white;
+@video-archive-header-bg: @bg-light;
+@video-archive-content-bg: @bg-normal;
+@video-archive-divider-color: #a7b7cc;
+@video-archive-modal-bg: @normal-color;
+@video-modal-bg: @bg-dark;
+
+// event-hubs 事件中心
+@event-header-bg: @bg-light;
+@event-header-center-bg: #25326a;
+@event-header-item-color-1: lighten(#1149ac, 40);
+@event-header-item-color-2: lighten(#117626, 40);
+@event-img-border: @default-color;
+@event-black-color: @white;
+@event-content-bg: @bg-normal;
+@event-bar-border: fade(@white, 25);
+@event-bar-badge-bg: @default-color;
+@event-noborder-color: @text-color-light;
+@event-fill-icon-color: fade(@white, 45);
+@event-fill-icon-bg: lighten(@bg-light, 12);
+@event-card-bg: @card-bg;
+@event-card-border: rgba(151, 151, 151, 0.08);
+@event-card-box-shadow: fade(@black, 8);
+@event-text-hover: fade(@white, 90);
+
+// person-manage 动向管控
+
+@person-manage-wrapper-bg: @bg-dark;
+@person-manage-bg: @bg-normal;
+@person-manage-divider-color: fade(@default-color, 35);
+@person-manage-color: fade(@white, 75);
+@person-manage-active-color: @white;
+@person-manage-form-title: @white;
+
+// profile 一人一档
+@profile-bg: @white;
+@profile-header-bg: @bg-light;
+@profile-body-bg: @bg-normal;
+@profile-shadow-color: fade(@black, 12);
+@profile-slide-bg: @bg-light;
+@profile-border-color: fade(@white, 25);
+
+// vehicle-file 一车一档
+@vehicle-file-bg: @white;
+@vehicle-file-header-bg: @bg-light;
+@vehicle-file-body-bg: @bg-normal;
+@vehicle-file-shadow-color: fade(@black, 8);
+@vehicle-file-slide-bg: @bg-light;
+@vehicle-file-border-color: fade(@white, 25);
+
+// 社区画像
+@community-collapse-bg: linear-gradient(180deg, transparent, @bg-light 100%);
+@community-slide-box-shadow: fade(@black, 8);
+@community-slide-card-bg: @card-bg;
+
+@community-bg: @bg-normal;
+@community-bar-border: fade(@white, 25);
+@community-search-bg: @bg-light;
+@community-search-border: fade(@white, 25);
+@community-search-icon-color: @white;
+@community-tab-color: @white;
+@community-tab-checked-bg: fade(@black, 36);
+@community-switch-icon-color: @primary-color;
+@community-switch-icon-bg: transparent;
+@community-switch-icon-border: @primary-color;
+@community-col-bg: @bg-light;
+@community-tab-border: fade(@white, 25);
+@community-row-border: fade(@white, 25);
+@community-font-black: fade(@white, 95);
+@community-descriptions-label: fade(@white, 65);
+@community-descriptions-content: fade(@white, 95);
+
+// 组织发现
+@org-bg: @bg-normal;
+@org-whte-color: @white;
+@org-bar-border: fade(@white, 25);
+@org-bar-color: fade(@white, 65);
+@org-bar-checked-color: @white;
+@org-bar-badge-bg: @default-color;
+@org-slide-box-shadow: fade(@black, 8);
+@org-slide-card-bg: @card-bg;
+@org-slide-card-border: rgba(0, 0, 0, 0.2);
+@org-slide-card-box-shadow: fade(@black, 8);
+@org-slide-img-box-shadow: fade(@default-color, 80);
+@org-record-img-box-shadow: rgb(197, 219, 240);
+
+// 视频巡逻
+@patrol-deep-font: @white;
+@patrol-deeper-font: fade(@white, 85);
+@patrol-bar-bg: fade(#04173b, 80);
+@patrol-icon-bg: @primary-color;
+@patrol-list-border: fade(@white, 25);
+@patrol-time-bg: fade(@white, 25);
+@patrol-card-bg: rgba(4, 23, 59, 0.65);
+@patrol-switch-color: @white;
+@patrol-modal-bg: @black;
+@patrol-tabel-bg: @black;
+@patrol-tabel-bg-hover: #272727;
+@patrol-scrollbar-shadow: #347def;
+@patrol-card-close-bg: rgba(4, 23, 59, 0.45);
+@patrol-message-color: fade(@warning-color, 85);
+
+//实时监控
+@relaTime-pro-bg: rgba(21, 37, 68, 0.8);
+@relaTime-pro-list: rgb(5, 17, 39);
+
+// 空调控制
+@acc-bg: @bg-normal;
+@acc-base-color: @proces-color;
+@acc-primary-color: rgb(19, 125, 136);
+@acc-menu-bg: lighten(@bg-normal, 4);
+@acc-menu-border: 2px solid lighten(@bg-normal, 12);
+@acc-control-bg: @bg-dark;
+@acc-divider-color: fade(@white, 25);
+@acc-input-bg: fade(@white, 10);
+@acc-btn-bg: fade(@acc-base-color, 20);
+
+// 人员管理
+@personnel-bg: @bg-normal;
+@personnel-input-bg: fade(@white, 15);
+@personnel-card-avatar-border: 4px solid @default-color;
+@personnel-card-bg: fade(@white, 10);
+@personnel-card-shadow: 0 2px 16px fade(@black, 8);
+@personnel-icon-color: @proces-color;
+
+//车辆管理
+@car-bg: @bg-normal;
+@car-input-bg: fade(@white, 15);
+@car-card-avatar-border: 4px solid @default-color;
+@car-card-bg: fade(@white, 10);
+@car-card-shadow: 0 2px 16px fade(@black, 8);
+@car-icon-color: @proces-color;
+@car-menu-bg: @bg-normal;
+@personnel-menu-bg: lighten(@bg-normal, 4);
+@personnel-menu-border: 2px solid lighten(@bg-normal, 12);
+
+// 电梯管理
+@elevator-bg: @bg-normal;
+@elevator-menu-bg: lighten(@bg-normal, 4);
+@elevator-menu-border: lighten(@bg-normal, 12);
+@elevator-white: @white;
+@elevator-card-bg: fade(@white, 10);
+@elevator-selected-card-bg: @primary-color;
+
+// 周边防范
+@ap-bg: @bg-normal;
+@ap-bg2: @normal-color;
+@ap-list-item-bg: fade(@white, 10);
+@ap-picture-border: 4px solid @default-color;
+@ap-container-bg: lighten(@bg-normal, 4);
+@ap-container-border: 2px solid lighten(@bg-normal, 12);
+
+// 电梯管理
+@elevator-bg: @bg-normal;
+@elevator-menu-bg: lighten(@bg-normal, 4);
+@elevator-menu-border: lighten(@bg-normal, 12);
+@elevator-white: @white;
+@elevator-card-bg: fade(@white, 10);
+@elevator-selected-card-bg: @primary-color;
+@elevator-num-color: #66eaf8;
+@elevator-bar-border: fade(@white, 25);
+
+// 布控
+@surveillance-bg: @bg-normal;
+@surveillance-white: @white;
+@surveillance-bar-border: fade(@white, 35);
+@surveillance-new-tag-bg: linear-gradient(to left, rgba(71, 81, 241, 0) 1%, #06e2ff 100%);
+@surveillance-btn-bg: linear-gradient(
+  0deg,
+  rgba(24, 65, 196, 0.2) 0%,
+  rgba(20, 10, 125, 0.07) 100%
+);
+@surveillance-btn-bg-hover: linear-gradient(
+  0deg,
+  rgba(24, 65, 196, 0.12) 0%,
+  rgba(20, 10, 125, 0.04) 100%
+);
+@surveillance-btn-border: #3153a1;
+@surveillance-list-item-bg: #1a2853;
+@surveillance-list-item-bg-active: fade(#223273, 80);
+@surveillance-primary-color: #4751f1;
+@surveillance-drawing-border: #283391;
+@surveillance-card-border: #2e52b4;
+@surveillance-card-bg: rgba(26, 65, 163, 0.36);
+@surveillance-card-before-bg: #06f9ff;
+@surveillance-mark-bg: #2c369e;
+@surveillance-light-mark-bg: #1685c6;
+@surveillance-card-font-label: #aac1ff;
+@surveillance-num-light: #06fbff;
+@surveillance-num-dark: #17c7fb;
+//人员热力
+@top-Tag: @tag-top;
+@top-Tag-hover: @primary-color;
+
+// 照明控制
+@lighting-bg: @bg-normal;
+@lighting-kanban-border: 2px solid lighten(@bg-normal, 12);
+@lighting-content-bg: @bg-dark;
+@lighting-number-color: @proces-color;
+
+// 一人一档 一车一档
+@file-bg: #1a2d53;
+@file-page-header: @bg-normal;
+@file-sidebar-border: 2px solid @bg-light;
+@file-sidebar-shadow: 0 2px 8px fade(@black, 45);
+@file-sidebar-anchor-active-bg: fade(@primary-color, 45);
+@file-sidebar-anchor-ball-color: @proces-color;
+@file-sidebar-bg: @bg-normal;
+@file-card-bg: @bg-normal;
+@file-card-shadow: 0 0 8px fade(@black, 45);
+@file-card-head-bg: fade(@white, 10);
+@file-card-head-before-color: @proces-color;
+
+@file-list-item-bg: fade(@white, 15);
+
+
+// energy-efficiency-monitor 能效监控
+
+@eem-bg: @bg-normal;
+@eem-container-bg: @bg-dark;
+@eem-both-sides-border: 2px solid @bg-light;
+@eem-both-sides-bg: fade(@bg-dark, 20);
+@eem-number-color: @proces-color;
+@eem-divider-color: fade(@white, 24);
+@eem-tabs-bg: fade(@black, 24);

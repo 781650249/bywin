@@ -1,0 +1,320 @@
+@import '~@/styles/theme.less';
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  padding: 12px;
+  .containner {
+    position: relative;
+    display: flex;
+    flex: auto;
+    background: @surveillance-bg;
+  }
+}
+.leftList {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 26.88%;
+  min-width: 342px;
+  max-width: 388px;
+  height: 100%;
+  padding: 16px 18px 12px 14px;
+  &Title {
+    height: 28px;
+    margin-bottom: 12px;
+    color: @surveillance-white;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  &Search {
+    display: flex;
+    height: 32px;
+    margin-bottom: 16px;
+  }
+  &Content {
+    flex: auto;
+    margin-right: -14px;
+    margin-bottom: 16px;
+    padding-right: 14px;
+    overflow: auto;
+    overflow: overlay;
+    .cardItem {
+      margin-bottom: 8px;
+      cursor: pointer;
+      &FirstRow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+        & > :first-child {
+          color: @surveillance-white;
+          font-size: 16px;
+        }
+        .messageBtn {
+          justify-content: center;
+          width: 66px;
+          height: 22px;
+          line-height: 22px;
+          text-align: center;
+          background-image: @surveillance-new-tag-bg;
+          border-radius: 11px 0 0 11px;
+        }
+      }
+      &Place {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+      }
+    }
+  }
+  .footerPaging {
+    height: 28px;
+    margin: 2px 0;
+    text-align: right;
+  }
+}
+
+.rightBar {
+  flex: auto;
+  min-width: 860px;
+  height: 100%;
+  padding: 20px 10px 12px 0;
+  &Content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(./images/home-bg.png) no-repeat;
+    background-size: 100% 100%;
+    // background-position: 50%;
+    // background-size: cover;
+  }
+}
+.radarBox {
+  position: absolute;
+  top: 20.83%;
+  right: 10.65%;
+  width: 25vw;
+  min-width: 360px;
+  height: 25vw;
+  min-height: 360px;
+  background: url(./images/radar.png) no-repeat;
+  background-size: 100% 100%;
+  &Radar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(./images/scanning.png) no-repeat;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    animation: move 2s linear infinite;
+    @keyframes move {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  .pointWraper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    > div {
+      opacity: 0;
+    }
+    &>:nth-child(1) {
+      position: absolute;
+      top: 34%;
+      left: 21%;
+      width: 9.66%;
+      height: 9.66%;
+      background: url(./images/blue-point.png);
+      background-size: contain;
+      animation: flash 1.8s linear infinite alternate;
+    }
+    &>:nth-child(2) {
+      position: absolute;
+      top: 12%;
+      left: 45%;
+      width: 6.66%;
+      height: 6.66%;
+      background: url(./images/blue-point.png);
+      background-size: contain;
+      animation: flash 2.6s linear infinite alternate;
+    }
+    &>:nth-child(3) {
+      position: absolute;
+      top: 26%;
+      left: 55%;
+      width: 4.66%;
+      height: 4.66%;
+      background: url(./images/blue-point.png);
+      background-size: contain;
+      animation: flash 2.4s linear infinite alternate;
+    }
+    &>:nth-child(4) {
+      position: absolute;
+      top: 76%;
+      left: 38%;
+      width: 6.66%;
+      height: 6.66%;
+      background: url(./images/blue-point.png);
+      background-size: contain;
+      animation: flash 2.4s linear infinite alternate;
+    }
+    &>:nth-child(5) {
+      position: absolute;
+      top: 66%;
+      left: 68%;
+      width: 7.22%;
+      height: 7.22%;
+      background: url(./images/blue-point.png);
+      background-size: contain;
+      animation: flash 2.8s linear infinite alternate;
+    }
+    &>:nth-child(6), :nth-child(7), :nth-child(8) {
+      position: absolute;
+      width: 10.22%;
+      height: 10.22%;
+      background: url(./images/red-point.png);
+      background-size: contain;
+      animation: redflash 6s linear 1;
+      & > div {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 90px;
+        height: 100px;
+        background: rgba(26,65,163,0.36);
+        border: 1px solid #2E52B4;
+        .pushCardTitle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 20px;
+          font-size: 12px;
+          border-bottom: 1px solid #2E52B4;
+          &>:first-child {
+            margin-right: 6px;
+          }
+        } 
+        .pushCardImg {
+          display: flex;
+          flex: auto;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+    &>:nth-child(6) {
+      top: 22%;
+      left: 25%;
+      &::before {
+        position: absolute;
+        top: 20px;
+        left: -25px;
+        width: 30px;
+        height: 1px;
+        border: 1px dashed #F83A5A;
+        content: '';
+      }
+      &::after {
+        position: absolute;
+        top: 2px;
+        left: -71px;
+        width: 50px;
+        height: 1px;
+        border: 1px dashed #F83A5A;
+        transform:rotate(45deg);
+        content: '';
+      }
+      & > div {
+        top: -65px;
+        left: -160px;
+      }
+    }
+    &>:nth-child(7) {
+      top: 28%;
+      left: 69%;
+      &::before {
+        position: absolute;
+        left: 25px;
+        width: 30px;
+        height: 1px;
+        border: 1px dashed #F83A5A;
+        transform:rotate(135deg);
+        content: '';
+      }
+      &::after {
+        position: absolute;
+        top: -11px;
+        left: 55px;
+        width: 50px;
+        height: 1px;
+        border: 1px dashed #F83A5A;
+        content: '';
+      }
+      & > div {
+        top: -45px;
+        right: -158px;
+      }
+    }
+    &>:nth-child(8) {
+      top: 74%;
+      left: 47.5%;
+      &::before {
+        position: absolute;
+        top: 40px;
+        left: 25px;
+        width: 30px;
+        height: 1px;
+        border: 1px dashed #F83A5A;
+        transform:rotate(45deg);
+        content: '';
+      }
+      &::after {
+        position: absolute;
+        top: 50px;
+        left: 55px;
+        width: 50px;
+        height: 1px;
+        border: 1px dashed #F83A5A;
+        content: '';
+      }
+      & > div {
+        top: 25px;
+        right: -158px;
+      }
+    }
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes redflash {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
